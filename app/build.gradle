@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.example.banking_app_y3s2'
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.example.banking_app_y3s2"
