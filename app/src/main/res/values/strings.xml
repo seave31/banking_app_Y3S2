@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">banking_app_Y3S2</string>
+    <string name="logo_content_description">Bank logo</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="sign_in_subtitle">Sign in to your banking account</string>
+    <string name="phone_label">Phone Number</string>
+    <string name="phone_hint">Enter your phone number</string>
+    <string name="pin_label">PIN</string>
+    <string name="pin_hint">Enter your PIN</string>
+    <string name="sign_in">Sign In</string>
+    <string name="new_user">New user?</string>
+    <string name="create_account">Create Account</string>
+    <string name="demo_hint">🔒 Demo: Use any registered phone and PIN</string>
 </resources>

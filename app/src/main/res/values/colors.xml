@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="brand_teal_dark">#11686E</color>
+    <color name="brand_teal_mid">#1D8A91</color>
+    <color name="brand_bg_top">#D9F1F3</color>
+    <color name="brand_bg_bottom">#EDF8F9</color>
+    <color name="card_white">#FFFDFD</color>
+    <color name="input_bg">#F3F8F9</color>
+    <color name="input_stroke">#D2E4E6</color>
+    <color name="text_primary">#1A2328</color>
+    <color name="text_secondary">#5C6F75</color>
+    <color name="text_hint">#8CA1A7</color>
 </resources>
