@@ -3,5 +3,8 @@
     <style name="Base.Theme.Banking_app_Y3S2" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:textViewStyle">@style/Widget.BankingApp.CleanTextView</item>
+        <item name="android:editTextStyle">@style/Widget.BankingApp.CleanEditText</item>
+        <item name="buttonStyle">@style/Widget.BankingApp.CleanButton</item>
     </style>
 </resources>
