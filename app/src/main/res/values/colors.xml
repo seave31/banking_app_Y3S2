@@ -2,4 +2,28 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="brand_teal_dark">#8076E7</color>
+    <color name="brand_teal_mid">#9C94EE</color>
+    <color name="brand_bg_top">#5C4BF1</color>
+    <color name="brand_bg_bottom">#4A34E4</color>
+    <color name="card_white">#F8F8FB</color>
+    <color name="input_bg">#F2F3F8</color>
+    <color name="input_stroke">#D8DEEC</color>
+    <color name="text_primary">#1D335A</color>
+    <color name="text_secondary">#6A7693</color>
+    <color name="text_hint">#5E6E8B</color>
+    <color name="header_subtitle">#EEEAFE</color>
+    <color name="divider_color">#D7DDEA</color>
+    <color name="icon_badge">#7A6CE7</color>
+    <color name="circle_top">#7264EC</color>
+    <color name="circle_bottom">#4A39DA</color>
+    <color name="surface_bg">#EEF1F7</color>
+    <color name="navy_text">#0B1C3B</color>
+    <color name="soft_green_bg">#E4F5EE</color>
+    <color name="soft_green_text">#008A4E</color>
+    <color name="soft_red_bg">#FBECEE</color>
+    <color name="soft_red_text">#D62F2F</color>
+    <color name="soft_blue_bg">#E8ECFA</color>
+    <color name="soft_yellow_bg">#FFF6E7</color>
+    <color name="soft_yellow_text">#D78C0A</color>
 </resources>

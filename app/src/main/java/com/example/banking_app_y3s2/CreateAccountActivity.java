@@ -11,28 +11,26 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class CreateAccountActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        setContentView(R.layout.activity_create_account);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.createAccountRoot), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        TextView createAccountText = findViewById(R.id.createAccountText);
-        createAccountText.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CreateAccountActivity.class);
-            startActivity(intent);
-        });
+        TextView backToLoginText = findViewById(R.id.backToLoginText);
+        backToLoginText.setOnClickListener(v -> finish());
 
-        Button signInButton = findViewById(R.id.signInButton);
-        signInButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+        Button createAccountButton = findViewById(R.id.createAccountButton);
+        createAccountButton.setOnClickListener(v -> {
+            Intent intent = new Intent(CreateAccountActivity.this, DashboardActivity.class);
             startActivity(intent);
             finish();
         });
