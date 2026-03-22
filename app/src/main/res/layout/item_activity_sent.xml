@@ -44,18 +44,34 @@
         android:gravity="end"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-$150.00"
-            android:fontFamily="sans-serif-medium"
-            android:shadowColor="@android:color/transparent"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="0"
-            android:textColor="@color/soft_red_text"
-            android:textSize="15sp"
-            android:textStyle="normal" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_dot_red" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_amount_chip_red"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:text="-$150.00"
+                android:fontFamily="sans-serif-medium"
+                android:shadowColor="@android:color/transparent"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="0"
+                android:textColor="@color/soft_red_text"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"

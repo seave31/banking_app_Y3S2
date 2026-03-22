@@ -319,9 +319,19 @@
                 android:paddingBottom="8dp">
 
                 <include layout="@layout/item_activity_received" />
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color" />
+
                 <include layout="@layout/item_activity_sent" />
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_color" />
+
                 <include layout="@layout/item_activity_withdrawal" />
             </LinearLayout>
 

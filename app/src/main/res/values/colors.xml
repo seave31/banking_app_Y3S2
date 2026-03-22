@@ -20,9 +20,9 @@
     <color name="surface_bg">#EEF1F7</color>
     <color name="navy_text">#0B1C3B</color>
     <color name="soft_green_bg">#E4F5EE</color>
-    <color name="soft_green_text">#08A662</color>
+    <color name="soft_green_text">#008A4E</color>
     <color name="soft_red_bg">#FBECEE</color>
-    <color name="soft_red_text">#FF3B43</color>
+    <color name="soft_red_text">#D62F2F</color>
     <color name="soft_blue_bg">#E8ECFA</color>
     <color name="soft_yellow_bg">#FFF6E7</color>
     <color name="soft_yellow_text">#D78C0A</color>
