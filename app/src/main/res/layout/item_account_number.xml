@@ -28,9 +28,10 @@
             android:textSize="12sp" />
 
         <TextView
+            android:id="@+id/acc_num_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ACC833505255"
+            android:text=""
             android:textColor="@color/navy_text"
             android:textSize="16sp"
             android:textStyle="bold" />

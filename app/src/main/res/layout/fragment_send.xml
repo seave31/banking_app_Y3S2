@@ -57,10 +57,11 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/balance_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="$5280.50"
+                    android:text=""
                     android:textColor="@color/navy_text"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -70,12 +71,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:text="@string/phone_label"
+                android:text="Account Number"
                 android:textColor="@color/text_primary"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/account_number_et"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginTop="8dp"
@@ -83,7 +85,6 @@
                 android:drawableStart="@android:drawable/ic_menu_call"
                 android:drawablePadding="10dp"
                 android:hint="+1 234 567 8900"
-                android:inputType="phone"
                 android:paddingHorizontal="14dp"
                 android:textColor="@color/navy_text"
                 android:textColorHint="@color/text_hint" />
@@ -98,6 +99,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/amount_et"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginTop="8dp"
@@ -172,6 +174,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/remark_et"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="8dp"
@@ -184,6 +187,7 @@
                 android:textColorHint="@color/text_hint" />
 
             <Button
+                android:id="@+id/send_money_btn"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginTop="20dp"
