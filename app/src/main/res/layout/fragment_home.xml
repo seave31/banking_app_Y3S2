@@ -320,7 +320,7 @@
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp">
 
-                <include layout="@layout/item_activity_received" />
+                <include layout="@layout/item_transaction_history" />
 
                 <View
                     android:layout_width="match_parent"

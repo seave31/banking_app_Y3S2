@@ -1,5 +1,6 @@
 package com.example.banking_app_y3s2;
 
+import com.example.banking_app_y3s2.models.Transaction;
 import com.example.banking_app_y3s2.models.TransactionResponse;
 
 import java.util.List;
@@ -25,5 +26,8 @@ public interface ApiInterface {
 
     @POST("transfer")
     Call<TransactionResponse> sendMoney(@Header("Authorization") String token, @Body SendMoneyRequest request);
+
+    @GET("transactions")
+    Call<List<Transaction>> getTransactionHistory(@Header("Authorization") String token);
 }
 

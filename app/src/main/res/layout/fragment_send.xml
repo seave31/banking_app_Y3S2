@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/surface_bg"
     android:orientation="vertical">
 
@@ -116,52 +117,99 @@
                 android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_quick_amount"
-                    android:gravity="center"
-                    android:text="$10"
-                    android:textColor="@color/navy_text"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+<!--                chip group-->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_quick_amount"
-                    android:gravity="center"
-                    android:text="$25"
-                    android:textColor="@color/navy_text"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/usd_10_chip"
+                        android:text="$10"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:checkable="true"
+                        android:backgroundTint="@color/chip_money_selected"
+                        app:chipStrokeColor="@color/soft_blue_bg"/>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_quick_amount"
-                    android:gravity="center"
-                    android:text="$50"
-                    android:textColor="@color/navy_text"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/usd_25_chip"
+                        android:text="$25"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:checkable="true"
+                        android:backgroundTint="@color/chip_money_selected"
+                        app:chipStrokeColor="@color/soft_blue_bg"/>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_quick_amount"
-                    android:gravity="center"
-                    android:text="$100"
-                    android:textColor="@color/navy_text"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/usd_50_chip"
+                        android:text="$50"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:checkable="true"
+                        app:chipStrokeColor="@color/soft_blue_bg"
+                        android:backgroundTint="@color/chip_money_selected"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/usd_100_chip"
+                        android:text="$100"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:checkable="true"
+                        android:backgroundTint="@color/chip_money_selected"
+                        app:chipStrokeColor="@color/soft_blue_bg"/>
+
+                </com.google.android.material.chip.ChipGroup>
+<!--                <TextView-->
+<!--                    android:id="@+id/usd10_txt"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/bg_quick_amount"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="$10"-->
+<!--                    android:textColor="@color/navy_text"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/usd25_txt"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/bg_quick_amount"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="$25"-->
+<!--                    android:textColor="@color/navy_text"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/usd50_txt"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/bg_quick_amount"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="$50"-->
+<!--                    android:textColor="@color/navy_text"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/usd100_txt"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/bg_quick_amount"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="$100"-->
+<!--                    android:textColor="@color/navy_text"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:textStyle="bold" />-->
             </LinearLayout>
 
             <TextView

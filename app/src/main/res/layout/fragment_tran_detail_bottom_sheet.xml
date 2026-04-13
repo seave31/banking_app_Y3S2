@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Transaction Type -->
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/typeTv"
+        android:text="Transfer"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Status -->
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/icon_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_soft_icon_green"
+        android:padding="10dp"
+        android:src="@android:drawable/arrow_up_float"
+        android:tint="@color/soft_green_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Amount -->
+    <TextView
+        android:id="@+id/amountTv"
+        android:text="$120.00"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/typeTv"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Sender -->
+    <TextView
+        android:id="@+id/senderTv"
+        android:text="From: John (123456)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/amountTv"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Receiver -->
+    <TextView
+        android:id="@+id/receiverTv"
+        android:text="To: Alice (654321)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/senderTv"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"
+
+        app:layout_constraintTop_toBottomOf="@id/receiverTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Transaction ID -->
+    <TextView
+        android:id="@+id/transactionIdTv"
+        android:text="ID: TXN123456"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/receiverTv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/dateTv"
+        android:text="12 Apr 2026, 10:30 AM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/transactionIdTv"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Remark -->
+    <TextView
+        android:id="@+id/remarkTv"
+        android:text="Payment for lunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/dateTv"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

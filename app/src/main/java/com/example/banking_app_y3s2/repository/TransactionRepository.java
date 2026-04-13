@@ -7,7 +7,10 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.banking_app_y3s2.RetrofitInstance;
 import com.example.banking_app_y3s2.SendMoneyRequest;
+import com.example.banking_app_y3s2.models.Transaction;
 import com.example.banking_app_y3s2.models.TransactionResponse;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,6 +36,29 @@ public class TransactionRepository {
 
             @Override
             public void onFailure(Call<TransactionResponse> call, Throwable t) {
+                data.setValue(null);
+            }
+        });
+        return data;
+    }
+
+
+    //transaction history
+    public LiveData<List<Transaction>> getTransactionHistory(String token){
+        MutableLiveData<List<Transaction>> data = new MutableLiveData<>();
+        RetrofitInstance.getApiInterface().getTransactionHistory(token).enqueue(new Callback<List<Transaction>>() {
+            @Override
+            public void onResponse(Call<List<Transaction>> call, Response<List<Transaction>> response) {
+                if(response.isSuccessful() && response.body() != null){
+                    data.setValue(response.body());
+                    Log.d("API_RESPONSE", new com.google.gson.Gson().toJson(response.body()));
+                } else {
+                    data.setValue(null);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Transaction>> call, Throwable t) {
                 data.setValue(null);
             }
         });

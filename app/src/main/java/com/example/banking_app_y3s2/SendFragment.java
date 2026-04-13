@@ -8,12 +8,15 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.banking_app_y3s2.databinding.FragmentSendBinding;
 import com.example.banking_app_y3s2.utils.SessionManager;
 import com.example.banking_app_y3s2.viewModel.SendViewModel;
 import com.example.banking_app_y3s2.viewModel.UserViewModel;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 public class SendFragment extends Fragment {
     private FragmentSendBinding binding;
@@ -52,6 +55,31 @@ public class SendFragment extends Fragment {
 
         });
 
+            //quick amount selected
+        //10 dollars chip
+        binding.usd10Chip.setOnClickListener(view -> {
+            String amount = "$ 10.00";
+            binding.amountEt.setText(amount);
+        });
+        //25 dollars chip
+        binding.usd25Chip.setOnClickListener(view -> {
+            String amount = "$ 25.00";
+            binding.amountEt.setText(amount);
+        });
+        //50 dollars chip
+        binding.usd50Chip.setOnClickListener(view -> {
+            String amount = "$ 50.00";
+            binding.amountEt.setText(amount);
+        });
+        //100 dollars chip
+        binding.usd100Chip.setOnClickListener(view -> {
+            String amount = "$ 100.00";
+            binding.amountEt.setText(amount);
+        });
+
+
+
+
         //submit button
         binding.sendMoneyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,9 +103,12 @@ public class SendFragment extends Fragment {
                     return;
                 }
 
+                //remove the $ and space from the string(amountStr)
+                String amountWithoutSymbol  = amountStr.replace("$", "").trim();
                 double amount;
                 try {
-                    amount = Double.parseDouble(amountStr);
+                    // Convert the amount from string to a double
+                    amount = Double.parseDouble(amountWithoutSymbol);
                 } catch (Exception e) {
                     binding.amountEt.setError("Invalid amount");
                     return;
