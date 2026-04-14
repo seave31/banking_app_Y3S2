@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.banking_app_y3s2.LoginRequest;
 import com.example.banking_app_y3s2.ResponseData;
 import com.example.banking_app_y3s2.RetrofitInstance;
+import com.example.banking_app_y3s2.models.Account;
 import com.google.gson.Gson;
 
 import retrofit2.Call;
@@ -57,6 +58,27 @@ public class UserRepository {
 
             @Override
             public void onFailure(Call<ResponseData> call, Throwable t) {
+                data.setValue(null);
+            }
+        });
+        return data;
+    }
+
+    public LiveData<Account> getUserByAccNum(String accountNumber){
+        MutableLiveData<Account> data = new MutableLiveData<>();
+        RetrofitInstance.getApiInterface().getUserByAccNum(accountNumber).enqueue(new Callback<Account>() {
+            @Override
+            public void onResponse(Call<Account> call, Response<Account> response) {
+                if(response.isSuccessful() && response.body() != null){
+                    Log.d("user by acc no : API_RESPONSE", new com.google.gson.Gson().toJson(response.body()));
+                    data.setValue(response.body());
+                }else {
+                    data.setValue(null);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Account> call, Throwable t) {
                 data.setValue(null);
             }
         });

@@ -1,5 +1,6 @@
 package com.example.banking_app_y3s2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.banking_app_y3s2.databinding.ActivityConfirmTransferBinding;
 import com.example.banking_app_y3s2.databinding.FragmentSendBinding;
 import com.example.banking_app_y3s2.utils.SessionManager;
 import com.example.banking_app_y3s2.viewModel.SendViewModel;
@@ -21,7 +25,6 @@ import com.google.android.material.chip.ChipGroup;
 public class SendFragment extends Fragment {
     private FragmentSendBinding binding;
     private UserViewModel userViewModel;
-    private SendViewModel sendViewModel;
     private SessionManager sessionManager;
 
     @Nullable
@@ -30,30 +33,12 @@ public class SendFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentSendBinding.inflate(inflater, container, false);
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        sendViewModel = new ViewModelProvider(this).get(SendViewModel.class);
 
         sessionManager = new SessionManager(requireContext());
-        String token = "Bearer " + sessionManager.getToken();
 
-        //get data from api
-        userViewModel.getCurrentUser(token).observe(getViewLifecycleOwner(), data -> {
-            if (data == null) {
-                return;
-            }
-            if (data.getAccount() == null) {
-                return;
-            }
-            if(data.getAccount().getCurrency() != null && data.getAccount().getCurrency().getSymbol() != null){
-                //balance
-                double balance = data.getAccount().getBalance();
-                //symbol
-                String symbol = data.getAccount().getCurrency().getSymbol();
 
-                //set balance and symbol
-                binding.balanceTxt.setText(symbol + String.format("%.2f", balance));
-            }
-
-        });
+        //get balance from api
+        loadBalance();
 
             //quick amount selected
         //10 dollars chip
@@ -76,7 +61,6 @@ public class SendFragment extends Fragment {
             String amount = "$ 100.00";
             binding.amountEt.setText(amount);
         });
-
 
 
 
@@ -118,12 +102,58 @@ public class SendFragment extends Fragment {
                     return;
                 }
 
+
+
                 //call api
-                sendViewModel.sendMoney(token, targetAccountNumberTv, amount, remark);
-                Toast.makeText(requireContext(), "Money is sent successfully!", Toast.LENGTH_SHORT).show();
+                String finalRemark = remark;
+                userViewModel.getUserByAccNum(targetAccountNumberTv).observe(getViewLifecycleOwner(), data ->{
+                    //navigate to confirm transfer activity only when data is ready
+                    Intent intent = new Intent(requireContext(), ConfirmTransferActivity.class);
+
+                    intent.putExtra("targetAccountNumber", data.getAccountNumber());
+                    intent.putExtra("accName", data.getAccountName());
+                    intent.putExtra("amount", amount);
+                    intent.putExtra("remark", finalRemark);
+                    startActivity(intent);
+                });
+
+
+
+
+
             }
         });
 
         return binding.getRoot();
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadBalance();  // refresh after transfer
+    }
+
+    private void loadBalance (){
+        String token = "Bearer " + sessionManager.getToken();
+        userViewModel.getCurrentUser(token).observe(getViewLifecycleOwner(), data -> {
+            if (data == null) {
+                return;
+            }
+            if (data.getAccount() == null) {
+                return;
+            }
+            if(data.getAccount().getCurrency() != null && data.getAccount().getCurrency().getSymbol() != null){
+                //balance
+                double balance = data.getAccount().getBalance();
+                //symbol
+                String symbol = data.getAccount().getCurrency().getSymbol();
+
+                //set balance and symbol
+                binding.balanceTxt.setText(symbol + String.format("%.2f", balance));
+            }
+
+        });
+    }
+
+
 }

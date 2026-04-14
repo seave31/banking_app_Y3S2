@@ -19,6 +19,9 @@ public class Account {
     private String created_at;
     private int id;
     private Currency currency; // nested
+    //new added
+    @SerializedName("account_name")
+    private String accountName;
 
     public int getCustomerId() { return customerId; }
     public String getAccountNumber() { return accountNumber; }
@@ -30,4 +33,5 @@ public class Account {
     public String getCreatedAt() { return created_at; }
     public int getId() { return id; }
     public Currency getCurrency() { return currency; }
+    public String getAccountName() { return accountName; }
 }

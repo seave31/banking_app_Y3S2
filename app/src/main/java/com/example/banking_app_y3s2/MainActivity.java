@@ -57,9 +57,14 @@ public class MainActivity extends AppCompatActivity {
             viewModel.login(phone, pin).observe(this, data->{
 
                 if(data != null){
+                    //token
                     String token = data.getToken();
                     Log.d("token", token);
+
+                    //name
                     String name = data.getUser().getName();
+
+                    //account number
                     String accountNumber = "";
                     if(data.getAccount() != null){
                         accountNumber = data.getAccount().getAccountNumber();

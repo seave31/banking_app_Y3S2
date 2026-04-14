@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/background"
+    >
+
+    <!-- Cancel -->
+    <TextView
+        android:id="@+id/cancelTv"
+        android:text="Cancel"
+        android:textSize="14sp"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleTv"
+        android:text="Confirm Transfer Details"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnBackground"
+        app:layout_constraintTop_toBottomOf="@id/cancelTv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Card Container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background1">
+
+            <!-- Arrow Icon -->
+            <ImageView
+                android:padding="8dp"
+                android:id="@+id/arrowIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/icon_transfer_fill"
+                android:backgroundTint="?attr/colorPrimary"
+                android:background="@drawable/bg_avatar_circle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- FROM -->
+            <TextView
+                android:id="@+id/fromLabel"
+                android:text="From"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/arrowIcon"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/fromName"
+                android:text="Randy Dokidis"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnBackground"
+                app:layout_constraintTop_toBottomOf="@id/fromLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/fromAcc"
+                android:text="Account No: 09534820592"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/fromName"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Divider -->
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="?attr/colorOutline"
+                app:layout_constraintTop_toBottomOf="@id/fromAcc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="12dp"/>
+
+            <!-- TO -->
+            <TextView
+                android:id="@+id/toLabel"
+                android:text="To"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/divider1"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/toName"
+                android:text="Allison Schleifer"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/toLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/toAcc"
+                android:text="Account No: 37500020597"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/toName"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+<!--            remark-->
+            <TextView
+                android:id="@+id/remarkLabel"
+                android:text="Remark:"
+                app:layout_constraintTop_toBottomOf="@id/toAcc"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/remarkValue"
+                android:text="a"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/dateLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Amount -->
+            <TextView
+                android:id="@+id/dateLabel"
+                android:text="Date of Transfer:"
+                app:layout_constraintTop_toBottomOf="@id/remarkLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/dateValue"
+                android:text="b"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/dateLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Total -->
+            <TextView
+                android:id="@+id/totalLabel"
+                android:text="Transfer Amount:"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/dateLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/totalValue"
+                android:text="₹8,002.00"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/totalLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    swipe to pay btn-->
+    <com.ncorti.slidetoact.SlideToActView
+        android:id="@+id/slideToPay"
+        app:layout_constraintTop_toBottomOf="@id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:text="Slide to Pay"
+       />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
