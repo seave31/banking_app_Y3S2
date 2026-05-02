@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/surface_bg">
+    android:background="@color/background">
 
     <View
         android:layout_width="match_parent"
@@ -33,6 +33,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/profile_icon_txt"
                     android:layout_width="62dp"
                     android:layout_height="62dp"
                     android:background="@drawable/bg_avatar_circle"
@@ -49,6 +50,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/profile_name_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="fff"
@@ -66,6 +68,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
@@ -91,6 +94,9 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/setting"
+                android:focusable="true"
+                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
@@ -113,9 +119,15 @@
                 <include layout="@layout/item_setting_notifications" />
                 <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
                 <include layout="@layout/item_setting_help" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
+                <include
+                    android:id="@+id/setting_languages_include"
+                    layout="@layout/item_setting_languages" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/logout_btn"
+                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="14dp"

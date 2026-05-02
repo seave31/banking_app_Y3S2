@@ -99,7 +99,6 @@
                     android:drawablePadding="10dp"
                     android:drawableStart="@android:drawable/ic_menu_call"
                     android:hint="@string/phone_hint"
-                    android:inputType="phone"
                     android:paddingHorizontal="14dp"
                     android:textColor="@color/text_primary"
                     android:textColorHint="@color/text_hint" />

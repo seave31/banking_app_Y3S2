@@ -1,5 +1,6 @@
 package com.example.banking_app_y3s2;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -58,12 +59,39 @@ public class DashboardActivity extends AppCompatActivity {
             }
             return false;
         });
+
+        //after scanning
+        String openFragment = getIntent().getStringExtra("open_fragment"); //holds value "send"
+        if ("send".equals(openFragment)) {
+            SendFragment sendFragment = new SendFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("account_number", getIntent().getStringExtra("account_number"));
+            bundle.putString("username", getIntent().getStringExtra("username"));
+            sendFragment.setArguments(bundle);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.dashboardContainer, sendFragment)
+                    .commit();
+        }
     }
+
+//    private void openSendFragment() {
+//
+//    }
 
     private void replaceFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.dashboardContainer, fragment)
                 .commit();
+    }
+
+    //language
+//    This method runs before onCreate()
+    @Override
+    protected void attachBaseContext(Context base) {
+        //pass the new localized Context to Android
+        super.attachBaseContext(LocaleHelper.setLocale(base, LocaleHelper.loadLanguage(base)));
     }
 }

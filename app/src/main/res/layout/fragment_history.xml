@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/surface_bg">
+    android:background="@color/background">
 
     <View
         android:layout_width="match_parent"
@@ -134,27 +134,31 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_surface_panel"
-                android:orientation="vertical"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:background="@drawable/bg_surface_panel"-->
+<!--                android:orientation="vertical"-->
+<!--                android:paddingTop="8dp"-->
+<!--                android:paddingBottom="8dp">-->
 
-                <include layout="@layout/item_activity_received" />
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
-                <include layout="@layout/item_activity_sent" />
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
-                <include layout="@layout/item_activity_withdrawal" />
-                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
-                <include layout="@layout/item_activity_sent" />
-            </LinearLayout>
+<!--                <include layout="@layout/item_activity_received" />-->
+<!--                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />-->
+<!--&lt;!&ndash;                <include layout="@layout/item_activity_sent" />&ndash;&gt;-->
+<!--&lt;!&ndash;                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />&ndash;&gt;-->
+<!--&lt;!&ndash;                <include layout="@layout/item_activity_withdrawal" />&ndash;&gt;-->
+<!--&lt;!&ndash;                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />&ndash;&gt;-->
+<!--&lt;!&ndash;                <include layout="@layout/item_activity_sent" />&ndash;&gt;-->
+<!--            </LinearLayout>-->
 
-            <Space
+<!--            <Space-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="12dp" />-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="12dp" />
+                android:layout_height="match_parent"/>
 
         </LinearLayout>
     </ScrollView>
