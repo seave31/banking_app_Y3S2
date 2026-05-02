@@ -23,6 +23,10 @@ public class Account {
     @SerializedName("account_name")
     private String accountName;
 
+    //handle error
+    @SerializedName("message")
+    private String message;
+
     public int getCustomerId() { return customerId; }
     public String getAccountNumber() { return accountNumber; }
     public String getAccountType() { return accountType; }
@@ -34,4 +38,9 @@ public class Account {
     public int getId() { return id; }
     public Currency getCurrency() { return currency; }
     public String getAccountName() { return accountName; }
+    public String getMessage(){ return message; }
+
+    public void setMessage(String message){
+        this.message = message;
+    }
 }

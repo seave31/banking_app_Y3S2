@@ -2,6 +2,7 @@ package com.example.banking_app_y3s2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import com.example.banking_app_y3s2.viewModel.SendViewModel;
 import com.example.banking_app_y3s2.viewModel.UserViewModel;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.snackbar.Snackbar;
 
 public class SendFragment extends Fragment {
     private FragmentSendBinding binding;
@@ -107,14 +109,26 @@ public class SendFragment extends Fragment {
                 //call api
                 String finalRemark = remark;
                 userViewModel.getUserByAccNum(targetAccountNumberTv).observe(getViewLifecycleOwner(), data ->{
-                    //navigate to confirm transfer activity only when data is ready
-                    Intent intent = new Intent(requireContext(), ConfirmTransferActivity.class);
+                    if(data.getMessage().equals("success")){
+                        //navigate to confirm transfer activity only when data is ready
+                        Intent intent = new Intent(requireContext(), ConfirmTransferActivity.class);
 
-                    intent.putExtra("targetAccountNumber", data.getAccountNumber());
-                    intent.putExtra("accName", data.getAccountName());
-                    intent.putExtra("amount", amount);
-                    intent.putExtra("remark", finalRemark);
-                    startActivity(intent);
+                        intent.putExtra("targetAccountNumber", data.getAccountNumber());
+                        intent.putExtra("accName", data.getAccountName());
+                        intent.putExtra("amount", amount);
+                        intent.putExtra("remark", finalRemark);
+                        startActivity(intent);
+                    } else {
+                        //account not found
+                        Snackbar snackbar = Snackbar.make(view, getString(R.string.acc_not_found), Snackbar.LENGTH_LONG);
+                        // background color
+//                        snackbar.setBackgroundTint(getResources().getColor(R.color.background));
+//                        snackbar.setTextColor(getResources().getColor(R.color.textColor));
+                        snackbar.show();
+                        binding.accountNumberEt.setText("");
+                        binding.amountEt.setText("");
+                    }
+
                 });
 
 
@@ -125,6 +139,19 @@ public class SendFragment extends Fragment {
         });
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if(getArguments() != null){
+            String accNum = getArguments().getString("account_number");
+            String username = getArguments().getString("username");
+            if(accNum != null) {
+                Log.d("===========accNum", accNum);
+                binding.accountNumberEt.setText(accNum);
+            }
+        }
     }
 
     @Override

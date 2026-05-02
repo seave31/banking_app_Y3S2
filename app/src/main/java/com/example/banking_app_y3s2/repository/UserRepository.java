@@ -73,7 +73,10 @@ public class UserRepository {
                     Log.d("user by acc no : API_RESPONSE", new com.google.gson.Gson().toJson(response.body()));
                     data.setValue(response.body());
                 }else {
-                    data.setValue(null);
+                    Account account = new Account();
+                    account.setMessage("Account not found");
+                    data.setValue(account);
+
                 }
             }
 

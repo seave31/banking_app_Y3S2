@@ -11,7 +11,7 @@
     <!-- Cancel -->
     <TextView
         android:id="@+id/cancelTv"
-        android:text="Cancel"
+        android:text="@string/cancel"
         android:textSize="14sp"
         android:textColor="?attr/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +22,7 @@
     <!-- Title -->
     <TextView
         android:id="@+id/titleTv"
-        android:text="Confirm Transfer Details"
+        android:text="@string/confirm_transfer"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="?attr/colorOnBackground"
@@ -66,7 +66,7 @@
             <!-- FROM -->
             <TextView
                 android:id="@+id/fromLabel"
-                android:text="From"
+                android:text="@string/from"
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@id/arrowIcon"
@@ -108,7 +108,7 @@
             <!-- TO -->
             <TextView
                 android:id="@+id/toLabel"
-                android:text="To"
+                android:text="@string/to"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@id/divider1"
                 app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +137,7 @@
 <!--            remark-->
             <TextView
                 android:id="@+id/remarkLabel"
-                android:text="Remark:"
+                android:text="@string/remark"
                 app:layout_constraintTop_toBottomOf="@id/toAcc"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="16dp"
@@ -155,7 +155,7 @@
             <!-- Amount -->
             <TextView
                 android:id="@+id/dateLabel"
-                android:text="Date of Transfer:"
+                android:text="@string/transfer_date"
                 app:layout_constraintTop_toBottomOf="@id/remarkLabel"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="16dp"
@@ -174,7 +174,7 @@
             <!-- Total -->
             <TextView
                 android:id="@+id/totalLabel"
-                android:text="Transfer Amount:"
+                android:text="@string/amount"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/dateLabel"
                 app:layout_constraintStart_toStartOf="parent"
@@ -203,7 +203,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        app:text="Slide to Pay"
+        app:text="@string/slide_to_pay"
        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

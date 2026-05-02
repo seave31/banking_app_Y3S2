@@ -2,6 +2,7 @@ package com.example.banking_app_y3s2;
 
 import static android.view.View.GONE;
 
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -79,5 +80,11 @@ public class ConfirmTransferActivity extends AppCompatActivity {
             sendViewModel.sendMoney(token, targetAccountNumber, amount, remark);
             finish();
         });
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        //pass the new localized Context to Android
+        super.attachBaseContext(LocaleHelper.setLocale(base, LocaleHelper.loadLanguage(base)));
     }
 }

@@ -72,6 +72,11 @@ public class AccountFragment extends Fragment {
 
         });
 
+        //languages
+        binding.settingLanguagesInclude.getRoot().setOnClickListener(view1 -> {
+            startActivity(new Intent(requireContext(), LanguageActivity.class));
+        });
+
 
         //logout
         binding.logoutBtn.setOnClickListener(new View.OnClickListener() {

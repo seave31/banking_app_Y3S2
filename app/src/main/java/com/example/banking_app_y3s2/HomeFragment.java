@@ -147,24 +147,27 @@ public class HomeFragment extends Fragment {
 
         if (nightMODE) {
 //      The switch is set to ON
-            binding.switcher.setChecked(true);
+//            binding.dar.setChecked(true);
 //      The app theme switches to Dark Mode
+            binding.darkLightModeIcon.setImageResource(R.drawable.ic_light);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
 
-        binding.switcher.setOnClickListener(new View.OnClickListener() {
+        binding.darkLightModeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 //                If night mode is ON → turn OFF
                 if (nightMODE) {
                     //turn to light mode
+                    binding.darkLightModeIcon.setImageResource(R.drawable.ic_light);
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     editor = sharedPreferences.edit();
                     editor.putBoolean("night", false);
                 } else {
 //                 If night mode is OFF → turn ON
                     //turn to dark mode
+                    binding.darkLightModeIcon.setImageResource(R.drawable.ic_dark);
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     editor = sharedPreferences.edit();
                     editor.putBoolean("night", true);

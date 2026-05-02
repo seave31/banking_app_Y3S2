@@ -1,6 +1,7 @@
 package com.example.banking_app_y3s2;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -133,4 +134,12 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 //    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        //pass the new localized Context to Android
+        super.attachBaseContext(LocaleHelper.setLocale(base, LocaleHelper.loadLanguage(base)));
+    }
+
+
 }

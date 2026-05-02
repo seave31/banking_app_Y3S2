@@ -2,6 +2,7 @@ package com.example.banking_app_y3s2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.banking_app_y3s2.databinding.ActivityMainBinding;
 import com.example.banking_app_y3s2.databinding.ActivityScanQrBinding;
+import com.example.banking_app_y3s2.views.GetResultActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
@@ -47,7 +49,7 @@ public class ScanQrActivity extends AppCompatActivity {
 
     private void startScanner() {
         ScanOptions options = new ScanOptions();
-        options.setPrompt("Scan QR Code");
+//        options.setPrompt("Scan QR Code");
         options.setBeepEnabled(true);
         options.setOrientationLocked(true);
         options.setDesiredBarcodeFormats(ScanOptions.QR_CODE);
@@ -59,9 +61,16 @@ public class ScanQrActivity extends AppCompatActivity {
         JSONObject object = new JSONObject(qrData);
         String accNum = object.getString("account_number");
         String username = object.getString("username");
+        Log.i("", "handleScanResult: " + accNum);
 
-//        BottomNavigationView bottomNavigationView = null;
-//        bottomNavigationView.setSelectedItemId(R.id.nav_send);
+        Intent intent = new Intent(ScanQrActivity.this, DashboardActivity.class);
+        intent.putExtra("account_number", accNum);
+        intent.putExtra("username", username);
+        intent.putExtra("open_fragment", "send");
+
+        startActivity(intent);
+        finish();
+
 
     }
 }
