@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
         //sign in button
         binding.signInButton.setOnClickListener(v -> {
             //get user input
-            String phone = binding.phoneInput.getText().toString();
+            String email = binding.emailInput.getText().toString();
             String pin = binding.pinInput.getText().toString();
 
 
-            viewModel.login(phone, pin).observe(this, data->{
+            viewModel.login(email, pin).observe(this, data->{
 
                 if(data != null){
                     //token
@@ -87,12 +87,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    private void loginUser(String phone, String pin){
+//    private void loginUser(String email, String pin){
 //        ProgressDialog dialog = new ProgressDialog(this);
 //        dialog.setMessage("Loading...");
 //        dialog.show();
 //
-//        LoginRequest request = new LoginRequest(phone, pin);
+//        LoginRequest request = new LoginRequest(email, pin);
 //        RetrofitInstance.getApiInterface().loginUser(request).enqueue(new Callback<ResponseData>() {
 //            @Override
 //            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {

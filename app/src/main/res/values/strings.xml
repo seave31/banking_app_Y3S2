@@ -17,10 +17,10 @@
     <string name="sign_in_with_arrow">Sign In   →</string>
     <string name="create_account_subtitle">Open your secure banking profile</string>
     <string name="welcome_back_to_login">Welcome Back to Login</string>
-    <string name="create_account_footer">Secure signup with phone and PIN</string>
+    <string name="create_account_footer">Secure signup with email and PIN</string>
     <string name="new_user">New user?</string>
     <string name="create_account">Create Account</string>
-    <string name="demo_hint">🔒 Demo: Use any registered phone and PIN</string>
+    <string name="demo_hint">🔒 Demo: Use any registered email and PIN</string>
     <string name="nav_home">Home</string>
     <string name="nav_send">Send</string>
     <string name="nav_history">History</string>
