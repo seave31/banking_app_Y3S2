@@ -50,7 +50,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="20dp"
-                    android:src="@android:drawable/ic_dialog_email"
+                    android:src="@drawable/baseline_people_alt_24"
                     android:contentDescription="@string/logo_content_description"
                     app:tint="@android:color/white" />
             </com.google.android.material.card.MaterialCardView>
@@ -78,7 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                app:cardBackgroundColor="@color/card_white"
+                app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="32dp"
                 app:cardElevation="8dp"
                 app:strokeWidth="0dp">
@@ -95,7 +95,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/full_name_label"
-                        app:startIconDrawable="@android:drawable/ic_menu_my_calendar">
+                        app:startIconDrawable="@drawable/ic_person_outline_24"
+                        app:startIconTint="@color/brass_gold">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etName"
                             android:layout_width="match_parent"
@@ -111,7 +112,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
                         android:hint="@string/email_label"
-                        app:startIconDrawable="@android:drawable/ic_dialog_email">
+                        app:startIconDrawable="@drawable/baseline_email_24"
+                        app:startIconTint="@color/brass_gold">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etEmail"
                             android:layout_width="match_parent"
@@ -127,7 +129,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
                         android:hint="@string/phone_label"
-                        app:startIconDrawable="@android:drawable/stat_sys_phone_call">
+                        app:startIconDrawable="@drawable/baseline_phone_24"
+                        app:startIconTint="@color/brass_gold">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etPhone"
                             android:layout_width="match_parent"
@@ -144,7 +147,8 @@
                         android:layout_marginTop="14dp"
                         android:hint="@string/password_label"
                         app:endIconMode="password_toggle"
-                        app:startIconDrawable="@android:drawable/ic_lock_lock">
+                        app:startIconDrawable="@drawable/baseline_lock_24"
+                        app:startIconTint="@color/brass_gold">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etPassword"
                             android:layout_width="match_parent"
@@ -161,7 +165,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
                         android:hint="@string/dob_label"
-                        app:startIconDrawable="@android:drawable/ic_menu_my_calendar">
+                        app:startIconDrawable="@drawable/baseline_calendar_month_24"
+                        app:startIconTint="@color/brass_gold">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etDob"
                             android:layout_width="match_parent"
@@ -180,7 +185,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
                         android:hint="@string/address_label"
-                        app:startIconDrawable="@android:drawable/ic_menu_directions">
+                        app:startIconDrawable="@drawable/baseline_location_on_24"
+                        app:startIconTint="@color/brass_gold">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etAddress"
                             android:layout_width="match_parent"
@@ -204,7 +210,7 @@
                         android:layout_height="60dp"
                         android:layout_marginTop="20dp"
                         android:backgroundTint="@color/primary"
-                        android:text="@string/register_with_arrow"
+                        android:text="@string/continue_text"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold"

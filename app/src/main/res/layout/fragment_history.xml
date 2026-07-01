@@ -7,7 +7,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="160dp"
         android:background="@drawable/bg_dashboard_header"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,73 +34,73 @@
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="14dp"-->
+<!--                android:orientation="horizontal">-->
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="76dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_tile"
-                    android:orientation="vertical"
-                    android:padding="12dp">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="76dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/bg_tile"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:padding="12dp">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/total_spent"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/total_spent"-->
+<!--                        android:textColor="@color/text_secondary"-->
+<!--                        android:textSize="12sp" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="-$425.00"
-                        android:fontFamily="sans-serif-medium"
-                        android:shadowColor="@android:color/transparent"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="0"
-                        android:textColor="@color/soft_red_text"
-                        android:textSize="18sp"
-                        android:textStyle="normal" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="6dp"-->
+<!--                        android:text="-$425.00"-->
+<!--                        android:fontFamily="sans-serif-medium"-->
+<!--                        android:shadowColor="@android:color/transparent"-->
+<!--                        android:shadowDx="0"-->
+<!--                        android:shadowDy="0"-->
+<!--                        android:shadowRadius="0"-->
+<!--                        android:textColor="@color/soft_red_text"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textStyle="normal" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="76dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_tile"
-                    android:orientation="vertical"
-                    android:padding="12dp">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="76dp"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/bg_tile"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:padding="12dp">-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/total_received"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/total_received"-->
+<!--                        android:textColor="@color/text_secondary"-->
+<!--                        android:textSize="12sp" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="+$500.00"
-                        android:fontFamily="sans-serif-medium"
-                        android:shadowColor="@android:color/transparent"
-                        android:shadowDx="0"
-                        android:shadowDy="0"
-                        android:shadowRadius="0"
-                        android:textColor="@color/soft_green_text"
-                        android:textSize="18sp"
-                        android:textStyle="normal" />
-                </LinearLayout>
-            </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="6dp"-->
+<!--                        android:text="+$500.00"-->
+<!--                        android:fontFamily="sans-serif-medium"-->
+<!--                        android:shadowColor="@android:color/transparent"-->
+<!--                        android:shadowDx="0"-->
+<!--                        android:shadowDy="0"-->
+<!--                        android:shadowRadius="0"-->
+<!--                        android:textColor="@color/soft_green_text"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textStyle="normal" />-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -117,7 +117,7 @@
                     android:background="@drawable/bg_filter_chip"
                     android:gravity="center"
                     android:text="@string/all_transactions"
-                    android:textColor="@color/navy_text"
+                    android:textColor="@color/textColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -129,7 +129,7 @@
                     android:background="@drawable/bg_filter_chip"
                     android:gravity="center"
                     android:text="@string/date"
-                    android:textColor="@color/navy_text"
+                    android:textColor="@color/textColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -157,6 +157,7 @@
 <!--                android:layout_height="12dp" />-->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
+                android:layout_marginTop="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 

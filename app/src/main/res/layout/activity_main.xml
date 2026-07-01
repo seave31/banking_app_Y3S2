@@ -60,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="26dp"
-                    android:src="@android:drawable/ic_dialog_email"
+                    android:src="@drawable/baseline_waving_hand_24"
                     android:contentDescription="@string/logo_content_description"
                     app:tint="@android:color/white" />
             </com.google.android.material.card.MaterialCardView>
@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
-                app:cardBackgroundColor="@color/card_white"
+                app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="36dp"
                 app:cardElevation="12dp"
                 app:strokeWidth="0dp">
@@ -106,14 +106,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/email_label"
-                        app:startIconDrawable="@android:drawable/ic_dialog_email">
+                        app:startIconDrawable="@drawable/baseline_email_24"
+                        app:startIconTint="@color/brass_gold">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/emailInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
-                            android:textColor="@color/text_primary"
+                            android:textColor="@color/black"
                             android:textSize="16sp"
 
                             android:paddingVertical="16dp"/>
@@ -125,16 +126,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:hint="@string/pin_label"
+                        android:hint="@string/password_label"
                         app:endIconMode="password_toggle"
-                        app:startIconDrawable="@android:drawable/ic_lock_lock">
+                        app:startIconDrawable="@drawable/baseline_lock_24"
+                        app:startIconTint="@color/brass_gold">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/pinInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="numberPassword"
-                            android:textColor="@color/text_primary"
+                            android:textColor="@color/black"
                             android:textSize="16sp"
                             android:paddingVertical="16dp"/>
                     </com.google.android.material.textfield.TextInputLayout>

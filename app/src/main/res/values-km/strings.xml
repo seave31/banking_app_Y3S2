@@ -4,6 +4,8 @@
     <string name="create_account_icon_description">Create account icon</string>
     <string name="welcome_back">សូមស្វាគមន៍មកវិញ</string>
     <string name="sign_in_subtitle">ចូលទៅក្នុងគណនីធនាគាររបស់អ្នក</string>
+    <string name="join_us">ចូលរួមជាមួយយើង</string>
+    <string name="register_subtitle">បង្កើតគណនីរបស់អ្នកដើម្បីចាប់ផ្តើម</string>
     <string name="phone_label">លេខទូរស័ព្ទ</string>
     <string name="phone_hint">បញ្ចូលលេខទូរស័ព្ទរបស់អ្នក</string>
     <string name="full_name_label">ឈ្មោះពេញ</string>
@@ -15,6 +17,12 @@
     <string name="pin_hint">••••</string>
     <string name="sign_in">ចូលគណនី</string>
     <string name="sign_in_with_arrow">ចូលគណនី   →</string>
+    <string name="password_label">ពាក្យសម្ងាត់</string>
+    <string name="dob_label">ថ្ងៃខែឆ្នាំកំណើត</string>
+    <string name="address_label">អាសយដ្ឋាន</string>
+    <string name="terms_agreement">ខ្ញុំយល់ព្រមតាមលក្ខខណ្ឌ</string>
+    <string name="already_have_account">មានគណនីរួចហើយឬនៅ? </string>
+    <string name="log_in">ចូល</string>
     <string name="create_account_subtitle">Open your secure banking profile</string>
     <string name="welcome_back_to_login">សូមស្វាគមន៍មកកាន់ការចូលគណនីវិញ</string>
     <string name="create_account_footer">ចុះឈ្មោះដោយសុវត្ថិភាពជាមួយទូរស័ព្ទ និងលេខកូដសម្ងាត់</string>
@@ -79,6 +87,28 @@
     <string name="transaction_id">លេខសម្គាល់ប្រតិបត្តិការ</string>
     <string name="save_as_image">រក្សាទុកជារូបភាព</string>
     <string name="payments">ការទូទាត់</string>
+    <string name="account_setup">ការដំឡើងគណនី</string>
+    <string name="choose_account_type">ជ្រើសរើសប្រភេទគណនី និងរូបិយប័ណ្ណរបស់អ្នក</string>
+    <string name="account_type">ប្រភេទគណនី</string>
+    <string name="currency">រូបិយប័ណ្ណ</string>
+    <string name="active_status">ស្ថានភាពសកម្ម</string>
+    <string name="complete_setup">បញ្ចប់ការដំឡើង</string>
+    <string name="go_back">ថយក្រោយ</string>
+    <string name="register_with_arrow">បង្កើតគណនី →</string>
+    <string name="saving_acc">គណនីសន្សំ</string>
+    <string name="us_dollar">USD - ដុល្លារអាមេរិក</string>
+
+    <string-array name="account_types">
+        <item>គណនីសន្សំ</item>
+        <item>គណនីចរន្ត</item>
+        <item>ប្រាក់បញ្ញើថេរ</item>
+        <item>គណនីអាជីវកម្ម</item>
+    </string-array>
+
+    <string-array name="currencies">
+        <item>USD - ដុល្លារ​អាមេរិក</item>
+        <item>KHR - រៀល</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

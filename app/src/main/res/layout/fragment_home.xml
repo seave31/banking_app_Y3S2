@@ -66,16 +66,16 @@
                    android:id="@+id/dark_light_mode_icon"
                    android:src="@drawable/ic_dark"
                    android:background="@drawable/bg_dot_dl"
-                   android:layout_width="30dp"
-                   android:layout_height="30dp"
+                   android:layout_width="25dp"
+                   android:layout_height="25dp"
                    android:padding="4dp"
                    android:scaleType="centerInside"/>
 
                 <ImageView
                     android:id="@+id/qr_icon_iv"
                     android:src="@drawable/baseline_qr_code_24"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:layout_marginEnd="12dp"
                     android:clickable="true"/>
                 <TextView
@@ -254,18 +254,19 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/send_money_feature_ic"
                     android:layout_width="0dp"
                     android:layout_height="108dp"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:focusable="true"
+                    android:clickable="true"
                     android:background="@drawable/bg_tile"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <ImageView
-                        android:id="@+id/send_money_feature_ic"
-                        android:clickable="true"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/bg_soft_icon"

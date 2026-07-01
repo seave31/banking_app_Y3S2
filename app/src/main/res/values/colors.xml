@@ -2,7 +2,7 @@
 <resources>
     <color name="primary">#0D9488</color>
     <color name="background">#FFFFFF</color>
-    <color name="background1">#F2F2F2</color>
+    <color name="background1">#EBEBEB</color>
     <color name="textColor">#0F172A</color>
 
     <color name="black">#FF000000</color>
@@ -37,6 +37,7 @@
     <color name="brass_gold">#D4A15C</color>
     <color name="off_white">#F3F1EA</color>
     <color name="muted_slate">#8A96A8</color>
+    <color name="gray">#CECECE</color>
 
     <!-- Alpha variants (ARGB) -->
     <color name="brass_gold_15">#26D4A15C</color>
