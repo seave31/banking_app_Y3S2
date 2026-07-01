@@ -4,6 +4,8 @@
     <string name="create_account_icon_description">Create account icon</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="sign_in_subtitle">Sign in to your banking account</string>
+    <string name="join_us">Join Us</string>
+    <string name="register_subtitle">Create your account to get started</string>
     <string name="phone_label">Phone Number</string>
     <string name="phone_hint">Enter your phone number</string>
     <string name="full_name_label">Full Name</string>
@@ -13,8 +15,15 @@
     <string name="pin_label">PIN</string>
     <string name="confirm_pin_label">Confirm PIN</string>
     <string name="pin_hint">••••</string>
+    <string name="password_label">Password</string>
+    <string name="dob_label">Date of Birth</string>
+    <string name="address_label">Address</string>
+    <string name="terms_agreement">I agree to the Terms and Conditions</string>
+    <string name="already_have_account">Already have an account? </string>
+    <string name="log_in">Log In</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_in_with_arrow">Sign In   →</string>
+    <string name="register_with_arrow">Create Account   →</string>
     <string name="create_account_subtitle">Open your secure banking profile</string>
     <string name="welcome_back_to_login">Welcome Back to Login</string>
     <string name="create_account_footer">Secure signup with email and PIN</string>
