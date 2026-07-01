@@ -239,6 +239,8 @@
                         android:background="@drawable/bg_soft_icon"
                         android:padding="11dp"
                         android:src="@drawable/ic_qr_code_scanner_24"
+                        android:tint="@color/brass_gold"
+
 />
 
                     <TextView
@@ -269,7 +271,7 @@
                         android:background="@drawable/bg_soft_icon"
                         android:padding="11dp"
                         android:src="@drawable/ic_send_money_24"
-                        android:tint="@color/brand_bg_top" />
+                        android:tint="@color/brass_gold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -296,14 +298,14 @@
                         android:layout_height="50dp"
                         android:background="@drawable/bg_soft_icon"
                         android:padding="11dp"
-                        android:src="@android:drawable/ic_menu_save"
-                        android:tint="@color/brand_bg_top" />
+                        android:src="@drawable/ic_payment_24"
+                        android:tint="@color/brass_gold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/withdraw"
+                        android:text="@string/payments"
                         android:textColor="@color/textColor"
                         android:textSize="13sp"
                         android:textStyle="bold" />

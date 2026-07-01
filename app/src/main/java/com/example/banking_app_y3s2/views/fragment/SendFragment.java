@@ -44,22 +44,22 @@ public class SendFragment extends Fragment {
             //quick amount selected
         //10 dollars chip
         binding.usd10Chip.setOnClickListener(view -> {
-            String amount = "$ 10.00";
+            String amount = "10.00";
             binding.amountEt.setText(amount);
         });
         //25 dollars chip
         binding.usd25Chip.setOnClickListener(view -> {
-            String amount = "$ 25.00";
+            String amount = "25.00";
             binding.amountEt.setText(amount);
         });
         //50 dollars chip
         binding.usd50Chip.setOnClickListener(view -> {
-            String amount = "$ 50.00";
+            String amount = "50.00";
             binding.amountEt.setText(amount);
         });
         //100 dollars chip
         binding.usd100Chip.setOnClickListener(view -> {
-            String amount = "$ 100.00";
+            String amount = "100.00";
             binding.amountEt.setText(amount);
         });
 

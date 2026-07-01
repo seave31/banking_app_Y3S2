@@ -2,7 +2,7 @@
 <resources>
     <color name="primary">#0D9488</color>
     <color name="background">#FFFFFF</color>
-    <color name="background1">#F8FAFC</color>
+    <color name="background1">#F2F2F2</color>
     <color name="textColor">#0F172A</color>
 
     <color name="black">#FF000000</color>
@@ -12,8 +12,8 @@
     <color name="brand_bg_top">#0F172A</color>
     <color name="brand_bg_bottom">#1E293B</color>
     <color name="card_white">#FFFFFF</color>
-    <color name="input_bg">#F8FAFC</color>
-    <color name="input_stroke">#E2E8F0</color>
+    <color name="input_bg">#E7E7E7</color>
+    <color name="input_stroke">#DBDBDB</color>
     <color name="text_primary">#0F172A</color>
     <color name="text_secondary">#475569</color>
     <color name="text_hint">#94A3B8</color>
@@ -31,4 +31,17 @@
     <color name="soft_blue_bg">#EFF6FF</color>
     <color name="soft_yellow_bg">#FFFBEB</color>
     <color name="soft_yellow_text">#92400E</color>
+
+    <color name="ink_navy">#0F1B2D</color>
+    <color name="card_navy">#16263D</color>
+    <color name="brass_gold">#D4A15C</color>
+    <color name="off_white">#F3F1EA</color>
+    <color name="muted_slate">#8A96A8</color>
+
+    <!-- Alpha variants (ARGB) -->
+    <color name="brass_gold_15">#26D4A15C</color>
+    <color name="brass_gold_20">#33D4A15C</color>
+    <color name="brass_gold_40">#66D4A15C</color>
+    <color name="off_white_8">#14F3F1EA</color>
+    <color name="off_white_18">#2EF3F1EA</color>
 </resources>

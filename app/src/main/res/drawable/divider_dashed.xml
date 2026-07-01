@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Apply android:layerType="software" on the View using this drawable —
+     dashed strokes don't render reliably with hardware acceleration. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="line">
+    <stroke
+        android:width="1.5dp"
+        android:color="@color/off_white_18"
+        android:dashWidth="4dp"
+        android:dashGap="4dp" />
+</shape>
