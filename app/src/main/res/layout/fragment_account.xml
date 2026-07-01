@@ -93,6 +93,8 @@
                 <include layout="@layout/item_account_balance" />
                 <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
                 <include layout="@layout/item_account_phone" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" />
+                <include layout="@layout/item_account_email" />
             </LinearLayout>
 
             <LinearLayout
