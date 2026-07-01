@@ -82,6 +82,7 @@
                     android:id="@+id/profile_icon_tx"
                     android:layout_width="52dp"
                     android:layout_height="52dp"
+                    android:clickable="true"
                     android:background="@drawable/bg_avatar_circle"
                     android:gravity="center"
                     android:text="f"

@@ -72,6 +72,12 @@
     <string name="kh">Khmer</string>
     <string name="acc_not_found">Account not found</string>
     <string name="qr_des">Show or share this QR code for others to scan and transfer money to your account</string>
+    <string name="change_pin">Change PIN, biometrics</string>
+    <string name="manage_preferences">Manage preferences</string>
+    <string name="sent_to">Sent to</string>
+    <string name="received_from">Received from</string>
+    <string name="transaction_id">TRANSACTION ID</string>
+    <string name="save_as_image">SAVE AS IMAGE</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

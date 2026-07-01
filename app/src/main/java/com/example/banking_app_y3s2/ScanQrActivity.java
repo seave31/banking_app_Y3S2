@@ -49,7 +49,7 @@ public class ScanQrActivity extends AppCompatActivity {
 
     private void startScanner() {
         ScanOptions options = new ScanOptions();
-//        options.setPrompt("Scan QR Code");
+        options.setPrompt("Scan QR Code");
         options.setBeepEnabled(true);
         options.setOrientationLocked(true);
         options.setDesiredBarcodeFormats(ScanOptions.QR_CODE);

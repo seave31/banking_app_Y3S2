@@ -131,6 +131,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //view profile
+        binding.profileIconTx.setOnClickListener(view -> {
+            BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNav);
+            bottomNavigationView.setSelectedItemId(R.id.nav_account);
+        });
+
         //see all
         binding.viewAll.setOnClickListener(view -> {
             BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNav);

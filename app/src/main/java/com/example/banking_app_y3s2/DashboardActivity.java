@@ -63,12 +63,17 @@ public class DashboardActivity extends AppCompatActivity {
         //after scanning
         String openFragment = getIntent().getStringExtra("open_fragment"); //holds value "send"
         if ("send".equals(openFragment)) {
+
+            //change the bottom tab
+            bottomNav.setSelectedItemId(R.id.nav_send);
+
             SendFragment sendFragment = new SendFragment();
             Bundle bundle = new Bundle();
             bundle.putString("account_number", getIntent().getStringExtra("account_number"));
             bundle.putString("username", getIntent().getStringExtra("username"));
-            sendFragment.setArguments(bundle);
+            sendFragment.setArguments(bundle); //pass data to send fragment
 
+            //removes current fragment and puts SendFragment in the container(change fragment)
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.dashboardContainer, sendFragment)

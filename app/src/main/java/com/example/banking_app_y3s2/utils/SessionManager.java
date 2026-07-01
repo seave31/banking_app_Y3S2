@@ -29,6 +29,8 @@ public class SessionManager {
     public String getAccount() {
         return preferences.getString("acc_number", "");
     }
+
+
     public void logout(){
         preferences.edit().clear().apply();
     }

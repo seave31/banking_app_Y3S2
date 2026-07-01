@@ -1,5 +1,6 @@
 package com.example.banking_app_y3s2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -28,6 +31,7 @@ public class SendFragment extends Fragment {
     private FragmentSendBinding binding;
     private UserViewModel userViewModel;
     private SessionManager sessionManager;
+    private ActivityResultLauncher<Intent> launcher; //“receiver” that waits for result from another Activity
 
     @Nullable
     @Override
@@ -117,7 +121,8 @@ public class SendFragment extends Fragment {
                         intent.putExtra("accName", data.getAccountName());
                         intent.putExtra("amount", amount);
                         intent.putExtra("remark", finalRemark);
-                        startActivity(intent);
+//                        startActivity(intent);
+                        launcher.launch(intent); //wait for result
                     } else {
                         //account not found
                         Snackbar snackbar = Snackbar.make(view, getString(R.string.acc_not_found), Snackbar.LENGTH_LONG);
@@ -132,11 +137,25 @@ public class SendFragment extends Fragment {
                 });
 
 
-
-
-
             }
         });
+
+        launcher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result-> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
+                        Intent data = result.getData();
+
+                        if(data != null && data.getBooleanExtra( //Did the previous screen send transfer_success = true?
+                                "transfer_success", false //false → default value if key not found
+                        )){
+                            clearFields();
+                            loadBalance();
+                        }
+
+                    }
+                }
+        );
 
         return binding.getRoot();
     }
@@ -180,6 +199,11 @@ public class SendFragment extends Fragment {
             }
 
         });
+    }
+    private void clearFields() {
+        binding.accountNumberEt.setText("");
+        binding.amountEt.setText("");
+        binding.remarkEt.setText("");
     }
 
 

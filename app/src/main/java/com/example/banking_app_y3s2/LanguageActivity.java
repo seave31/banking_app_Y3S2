@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.banking_app_y3s2.databinding.ActivityLanguageBinding;
+import com.google.android.material.appbar.MaterialToolbar;
 
 public class LanguageActivity extends AppCompatActivity {
     private ActivityLanguageBinding binding;
@@ -23,9 +24,11 @@ public class LanguageActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         //leading icon
-        binding.arrowBackIc.setOnClickListener(view -> {
+        MaterialToolbar toolbar = binding.toolbar;
+        toolbar.setNavigationOnClickListener(v -> {
             finish();
         });
+
 
         //english selection
         binding.englishLanguagesInclude.getRoot().setOnClickListener(view -> {

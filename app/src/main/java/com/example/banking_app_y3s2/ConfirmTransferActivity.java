@@ -3,6 +3,7 @@ package com.example.banking_app_y3s2;
 import static android.view.View.GONE;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -78,6 +79,10 @@ public class ConfirmTransferActivity extends AppCompatActivity {
         //swipe button
         binding.slideToPay.setOnSlideCompleteListener(slideToActView -> {
             sendViewModel.sendMoney(token, targetAccountNumber, amount, remark);
+
+            Intent intent = new Intent();
+            intent.putExtra("transfer_success", true);
+            setResult(RESULT_OK, intent);
             finish();
         });
     }

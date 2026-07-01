@@ -24,6 +24,10 @@ public interface ApiInterface {
     @POST("logout")
     Call<LogoutResponse> logoutUser(@Header("Authorization") String token);
 
+    @POST("signup")
+    Call<ResponseData> registerUser(@Body RegisterRequest registerRequest);
+
+
     @POST("user")
     Call<ResponseData> getUser(@Header("Authorization") String token);
 

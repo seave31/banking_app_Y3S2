@@ -21,7 +21,7 @@
     <string name="new_user">អ្នកប្រើប្រាស់ថ្មី?</string>
     <string name="create_account">បង្កើតគណនី</string>
     <string name="demo_hint">🔒 ការបង្ហាញ៖ ប្រើទូរស័ព្ទ និងលេខកូដសម្ងាត់ដែលបានចុះឈ្មោះណាមួយ</string>
-    <string name="nav_home">ផ្ទះ</string>
+    <string name="nav_home">ទំព័រដើម</string>
     <string name="nav_send">ផ្ទេរប្រាក់</string>
     <string name="nav_history">ប្រតិបត្តិការ</string>
     <string name="nav_account">គណនី</string>
@@ -72,6 +72,12 @@
     <string name="kh">ខ្មែរ</string>
     <string name="acc_not_found">រកមិនឃើញគណនីទេ</string>
     <string name="qr_des">បង្ហាញ ឬចែករំលែកលេខកូដ QR នេះសម្រាប់អ្នកដទៃដើម្បីស្កេន និងផ្ទេរប្រាក់ទៅគណនីរបស់អ្នក</string>
+    <string name="change_pin">ប្តូរលេខសម្ងាត់, ជីវមាត្រ</string>
+    <string name="manage_preferences">គ្រប់គ្រងចំណូលចិត្ត</string>
+    <string name="sent_to">បានផ្ញើទៅ</string>
+    <string name="received_from">បានទទួលពី</string>
+    <string name="transaction_id">លេខសម្គាល់ប្រតិបត្តិការ</string>
+    <string name="save_as_image">រក្សាទុកជារូបភាព</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

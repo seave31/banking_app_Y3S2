@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                     //name
                     String name = data.getUser().getName();
 
+//                    //phone
+//                    String phone1 = data.getCustomer().getPhoneNumber().toString();
+
                     //account number
                     String accountNumber = "";
                     if(data.getAccount() != null){
