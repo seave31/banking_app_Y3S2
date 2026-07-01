@@ -1,9 +1,7 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -14,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.banking_app_y3s2.databinding.ActivityCreateAccountBinding;
+import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.ActivityCreateBankAccountBinding;
 import com.example.banking_app_y3s2.viewModel.AuthViewModel;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -59,6 +57,10 @@ public class CreateBankAccountActivity extends AppCompatActivity {
             firstname = parts[0];
             lastname = parts.length > 1 ? parts[1] : "";
         }
+
+        //user info
+        binding.tvUserFullname.setText(name);
+        binding.tvUserPhone.setText(phone);
 
 
 

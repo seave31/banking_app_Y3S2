@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2.adapter;
+package com.example.banking_app_y3s2.views.adapter;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.banking_app_y3s2.R;
-import com.example.banking_app_y3s2.TranDetailBottomSheet;
+import com.example.banking_app_y3s2.views.bottomsheet.TranDetailBottomSheet;
 import com.example.banking_app_y3s2.models.Transaction;
 
 import java.text.SimpleDateFormat;

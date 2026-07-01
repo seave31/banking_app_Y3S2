@@ -1,16 +1,12 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.example.banking_app_y3s2.utils.LocaleHelper;
 import com.example.banking_app_y3s2.databinding.ActivityLanguageBinding;
 import com.google.android.material.appbar.MaterialToolbar;
 

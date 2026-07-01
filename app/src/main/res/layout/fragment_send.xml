@@ -17,8 +17,8 @@
         <ImageView
             android:layout_width="26dp"
             android:layout_height="26dp"
-            android:src="@android:drawable/ic_media_previous"
-            android:tint="@android:color/white" />
+            android:src="@drawable/ic_attach_money_24"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
                 android:layout_height="52dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_input_field"
-                android:drawableStart="@android:drawable/ic_menu_call"
+                android:drawableStart="@drawable/ic_account_balance_wallet_24"
                 android:drawablePadding="10dp"
                 android:hint="+1 234 567 8900"
                 android:paddingHorizontal="14dp"
@@ -251,8 +251,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:backgroundTint="@color/background1"
-                app:strokeColor="@color/textColor"
-                android:textColor="@color/textColor"
+                app:strokeColor="@color/brand_bg_top"
+                android:textColor="@color/brand_bg_top"
                 android:textSize="16sp"
                 android:text="@string/continue_text"
                 android:textStyle="bold"

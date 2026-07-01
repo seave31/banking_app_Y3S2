@@ -1,8 +1,5 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.activity;
 
-import static android.content.Context.MODE_PRIVATE;
-
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;

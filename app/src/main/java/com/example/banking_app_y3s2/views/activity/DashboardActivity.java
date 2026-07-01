@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.activity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.banking_app_y3s2.views.fragment.AccountFragment;
+import com.example.banking_app_y3s2.views.fragment.HistoryFragment;
+import com.example.banking_app_y3s2.views.fragment.HomeFragment;
+import com.example.banking_app_y3s2.utils.LocaleHelper;
+import com.example.banking_app_y3s2.R;
+import com.example.banking_app_y3s2.views.fragment.SendFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DashboardActivity extends AppCompatActivity {

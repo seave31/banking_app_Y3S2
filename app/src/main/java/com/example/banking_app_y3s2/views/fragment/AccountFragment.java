@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.fragment;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -16,10 +16,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.banking_app_y3s2.R;
+import com.example.banking_app_y3s2.network.RetrofitInstance;
 import com.example.banking_app_y3s2.databinding.FragmentAccountBinding;
-import com.example.banking_app_y3s2.databinding.ItemAccountNumberBinding;
+import com.example.banking_app_y3s2.models.LogoutResponse;
 import com.example.banking_app_y3s2.utils.SessionManager;
 import com.example.banking_app_y3s2.viewModel.UserViewModel;
+import com.example.banking_app_y3s2.views.activity.LanguageActivity;
+import com.example.banking_app_y3s2.views.activity.MainActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;

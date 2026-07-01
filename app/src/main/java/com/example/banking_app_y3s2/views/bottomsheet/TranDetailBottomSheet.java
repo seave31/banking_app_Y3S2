@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.bottomsheet;
 
 import android.os.Bundle;
 
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.FragmentTranDetailBottomSheetBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 

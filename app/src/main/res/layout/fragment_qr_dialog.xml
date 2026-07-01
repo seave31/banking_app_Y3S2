@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="20dp"
-    tools:context=".QrDialogFragment">
+    tools:context=".views.fragment.QrDialogFragment">
 
     <TextView
         android:id="@+id/user_acc_name_tv"

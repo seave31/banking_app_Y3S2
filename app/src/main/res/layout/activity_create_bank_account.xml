@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".CreateBankAccountActivity">
+    tools:context=".views.activity.CreateBankAccountActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -122,7 +122,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tvHolderName"
+                            android:id="@+id/tvUserFullname"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Romelu Lukaku"
@@ -131,10 +131,10 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tvHolderEmail"
+                            android:id="@+id/tvUserPhone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="lakaka999@gmail.com"
+                            android:text=""
                             android:textColor="@color/text_secondary"
                             android:textSize="12sp" />
 

@@ -1,11 +1,9 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.banking_app_y3s2.utils.LocaleHelper;
+import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.ActivityCreateAccountBinding;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -53,6 +53,10 @@ public class CreateAccountActivity extends AppCompatActivity {
         binding.btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (!validateFields()) {
+                    return; // stop here, don't navigate
+                }
+
                 Intent intent = new Intent(CreateAccountActivity.this, CreateBankAccountActivity.class);
                 intent.putExtra("NAME", binding.etName.getText().toString());
                 intent.putExtra("EMAIL", binding.etEmail.getText().toString());
@@ -98,5 +102,38 @@ public class CreateAccountActivity extends AppCompatActivity {
     protected void attachBaseContext(Context base) {
         //pass the new localized Context to Android
         super.attachBaseContext(LocaleHelper.setLocale(base, LocaleHelper.loadLanguage(base)));
+    }
+
+    private boolean validateFields() {
+        boolean isValid = true;
+
+        if (binding.etName.getText() == null || binding.etName.getText().toString().trim().isEmpty()) {
+            binding.etName.setError("Name is required");
+            isValid = false;
+        }
+        if (binding.etEmail.getText() == null || binding.etEmail.getText().toString().trim().isEmpty()) {
+            binding.etEmail.setError("Email is required");
+            isValid = false;
+        }
+        if (binding.etPhone.getText() == null || binding.etPhone.getText().toString().trim().isEmpty()) {
+            binding.etPhone.setError("Phone is required");
+            isValid = false;
+        }
+        if (binding.etPassword.getText() == null || binding.etPassword.getText().toString().trim().isEmpty()) {
+            binding.etPassword.setError("Password is required");
+            isValid = false;
+        }
+        if (binding.etDob.getText() == null || binding.etDob.getText().toString().trim().isEmpty()) {
+            binding.dobLayout.setError("Date of birth is required");
+            isValid = false;
+        } else {
+            binding.dobLayout.setError(null); // clear if valid
+        }
+        if (binding.etAddress.getText() == null || binding.etAddress.getText().toString().trim().isEmpty()) {
+            binding.etAddress.setError("Address is required");
+            isValid = false;
+        }
+
+        return isValid;
     }
 }

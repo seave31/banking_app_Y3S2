@@ -5,10 +5,10 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.banking_app_y3s2.LoginRequest;
-import com.example.banking_app_y3s2.RegisterRequest;
-import com.example.banking_app_y3s2.ResponseData;
-import com.example.banking_app_y3s2.RetrofitInstance;
+import com.example.banking_app_y3s2.models.LoginRequest;
+import com.example.banking_app_y3s2.models.RegisterRequest;
+import com.example.banking_app_y3s2.models.ResponseData;
+import com.example.banking_app_y3s2.network.RetrofitInstance;
 import com.example.banking_app_y3s2.models.Account;
 import com.google.gson.Gson;
 

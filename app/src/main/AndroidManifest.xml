@@ -24,31 +24,31 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".CreateBankAccountActivity"
+            android:name=".views.activity.CreateBankAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".views.GetResultActivity"
+            android:name=".views.activity.GetResultActivity"
             android:exported="false" />
         <activity
-            android:name=".LanguageActivity"
+            android:name=".views.activity.LanguageActivity"
             android:exported="false" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".views.activity.DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateAccountActivity"
+            android:name=".views.activity.CreateAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".views.activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ScanQrActivity"
+            android:name=".views.activity.ScanQrActivity"
             android:exported="false" />
         <activity
-            android:name=".ConfirmTransferActivity"
+            android:name=".views.activity.ConfirmTransferActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".views.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.banking_app_y3s2.databinding.ActivityMainBinding;
+import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.ActivityScanQrBinding;
-import com.example.banking_app_y3s2.views.GetResultActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 

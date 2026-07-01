@@ -5,8 +5,8 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.banking_app_y3s2.RetrofitInstance;
-import com.example.banking_app_y3s2.SendMoneyRequest;
+import com.example.banking_app_y3s2.network.RetrofitInstance;
+import com.example.banking_app_y3s2.models.SendMoneyRequest;
 import com.example.banking_app_y3s2.models.Transaction;
 import com.example.banking_app_y3s2.models.TransactionResponse;
 

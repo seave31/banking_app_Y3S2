@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.banking_app_y3s2.adapter.TransactionAdapter;
+import com.example.banking_app_y3s2.views.adapter.TransactionAdapter;
 import com.example.banking_app_y3s2.databinding.FragmentHistoryBinding;
 import com.example.banking_app_y3s2.utils.SessionManager;
 import com.example.banking_app_y3s2.viewModel.TransactionViewModel;

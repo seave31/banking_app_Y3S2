@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,24 +7,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.banking_app_y3s2.databinding.ActivityConfirmTransferBinding;
+import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.FragmentSendBinding;
 import com.example.banking_app_y3s2.utils.SessionManager;
-import com.example.banking_app_y3s2.viewModel.SendViewModel;
 import com.example.banking_app_y3s2.viewModel.UserViewModel;
-import com.google.android.material.chip.Chip;
-import com.google.android.material.chip.ChipGroup;
+import com.example.banking_app_y3s2.views.activity.ConfirmTransferActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 public class SendFragment extends Fragment {
