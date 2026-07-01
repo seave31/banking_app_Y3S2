@@ -26,15 +26,14 @@ import java.util.Locale;
 public class CreateAccountActivity extends AppCompatActivity {
     private ActivityCreateAccountBinding binding;
     private TextInputLayout dobLayout;
-    private TextInputEditText etDob; // if you have one
+    private TextInputEditText etDob;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_create_account);
 
-        binding=  ActivityCreateAccountBinding.inflate(getLayoutInflater());
+        binding = ActivityCreateAccountBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.createAccountRoot), (v, insets) -> {
@@ -43,18 +42,24 @@ public class CreateAccountActivity extends AppCompatActivity {
             return insets;
         });
 
-        //leading icon
+        // Setup Toolbar back navigation
         MaterialToolbar toolbar = binding.toolbar;
-        toolbar.setNavigationOnClickListener(v-> {
-            finish();  // go back to previous screen
+        toolbar.setNavigationOnClickListener(v -> {
+            // Use the back dispatcher to handle navigation consistently
+            getOnBackPressedDispatcher().onBackPressed();
         });
 
-        //continue btn
+        // Setup "Log In" text click to go back
+        binding.tvLogin.setOnClickListener(v -> {
+            finish();
+        });
+
+        // Continue button navigation
         binding.btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!validateFields()) {
-                    return; // stop here, don't navigate
+                    return;
                 }
 
                 Intent intent = new Intent(CreateAccountActivity.this, CreateBankAccountActivity.class);
@@ -64,20 +69,16 @@ public class CreateAccountActivity extends AppCompatActivity {
                 intent.putExtra("PASSWORD", binding.etPassword.getText().toString());
                 intent.putExtra("DOB", binding.etDob.getText().toString());
                 intent.putExtra("ADDRESS", binding.etAddress.getText().toString());
-                startActivity(intent );
+                startActivity(intent);
             }
         });
 
-        //dob
+        // Date of Birth setup
         dobLayout = binding.dobLayout;
         etDob = binding.etDob;
         dobLayout.setEndIconOnClickListener(v -> showDatePicker());
-
-        // Or when clicking the text field
         etDob.setOnClickListener(v -> showDatePicker());
-        etDob.setFocusable(false); // Prevent keyboard
-
-
+        etDob.setFocusable(false);
     }
 
     private void showDatePicker() {
@@ -88,19 +89,14 @@ public class CreateAccountActivity extends AppCompatActivity {
         picker.show(getSupportFragmentManager(), "DATE_PICKER");
 
         picker.addOnPositiveButtonClickListener(selection -> {
-
-            SimpleDateFormat outputFormat =
-                    new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-
+            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
             String date = outputFormat.format(new Date(selection));
-
             etDob.setText(date);
         });
     }
 
     @Override
     protected void attachBaseContext(Context base) {
-        //pass the new localized Context to Android
         super.attachBaseContext(LocaleHelper.setLocale(base, LocaleHelper.loadLanguage(base)));
     }
 
@@ -127,7 +123,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             binding.dobLayout.setError("Date of birth is required");
             isValid = false;
         } else {
-            binding.dobLayout.setError(null); // clear if valid
+            binding.dobLayout.setError(null);
         }
         if (binding.etAddress.getText() == null || binding.etAddress.getText().toString().trim().isEmpty()) {
             binding.etAddress.setError("Address is required");
