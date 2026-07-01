@@ -1,5 +1,6 @@
 package com.example.banking_app_y3s2.views.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -16,7 +17,6 @@ import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.ActivityCreateBankAccountBinding;
 import com.example.banking_app_y3s2.viewModel.AuthViewModel;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 
 public class CreateBankAccountActivity extends AppCompatActivity {
     private AuthViewModel viewModel;
@@ -26,9 +26,8 @@ public class CreateBankAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_create_bank_account);
 
-        binding=  ActivityCreateBankAccountBinding.inflate(getLayoutInflater());
+        binding = ActivityCreateBankAccountBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.createBankAccRoot), (v, insets) -> {
@@ -37,114 +36,76 @@ public class CreateBankAccountActivity extends AppCompatActivity {
             return insets;
         });
 
-        //leading icon
+        // Setup Toolbar back button
         MaterialToolbar toolbar = binding.toolbar;
-        toolbar.setNavigationOnClickListener(v -> {
-            finish();
-        });
+        toolbar.setNavigationOnClickListener(v -> finish());
 
-        //receive data from the previous screen
+        // Setup Go Back button
+        binding.btnBack.setOnClickListener(v -> finish());
+
+        // Receive data from previous screen
         String name = getIntent().getStringExtra("NAME");
         String email = getIntent().getStringExtra("EMAIL");
         String phone = getIntent().getStringExtra("PHONE");
         String password = getIntent().getStringExtra("PASSWORD");
         String dob = getIntent().getStringExtra("DOB");
         String address = getIntent().getStringExtra("ADDRESS");
-        String firstname = "";
-        String lastname = "";
-        if (name != null && !name.trim().isEmpty()) {
-            String[] parts = name.trim().split("\\s+");
-            firstname = parts[0];
-            lastname = parts.length > 1 ? parts[1] : "";
-        }
 
-        //user info
+        // Display user info in header
         binding.tvUserFullname.setText(name);
         binding.tvUserPhone.setText(phone);
 
+        // Account Type Dropdown
+        String[] accountTypes = {"Saving account", "Current account", "Fixed deposit", "Business account"};
+        ArrayAdapter<String> typeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, accountTypes);
+        binding.dropdownAccountType.setAdapter(typeAdapter);
+        binding.dropdownAccountType.setText(accountTypes[0], false);
 
+        // Currency Dropdown
+        String[] currencies = {"USD - US Dollar", "KHR - Riel"};
+        ArrayAdapter<String> currAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, currencies);
+        binding.dropdownCurrency.setAdapter(currAdapter);
+        binding.dropdownCurrency.setText(currencies[0], false);
 
-
-        //acc types drop down
-        MaterialAutoCompleteTextView accountType = findViewById(R.id.dropdownAccountType);
-        String[] accountTypes = {
-                "Saving account",
-                "Current account",
-                "Fixed deposit",
-                "Business account"
-        };
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                accountTypes
-        );
-
-        accountType.setAdapter(adapter);
-        accountType.setText(accountTypes[0], false);
-        accountType.setOnFocusChangeListener((v, hasFocus) -> {
-            if (hasFocus) {
-                accountType.showDropDown();
-            }
-        });
-
-        //currencies dropdown
-        MaterialAutoCompleteTextView currency = findViewById(R.id.dropdownCurrency);
-        String[] currencies = {
-                "USD - US Dollar",
-                "KHR - Riel",
-        };
-
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, currencies);
-        currency.setAdapter(adapter2);
-        currency.setText(currencies[0], false);
-        currency.setOnFocusChangeListener((v, hasFocus)->{
-            if(hasFocus){
-                currency.showDropDown();
-            }
-        });
-
-        final String fName = name;
-        final String fEmail = email;
-        final String fPhone = phone;
-        final String fPassword = password;
-        final String fDob = dob;
-        final String fAddress = address;
-        final String fFirstName = firstname;
-        final String fLastName = lastname;
-
-
-        //assign viewModel
+        // ViewModel setup
         viewModel = new ViewModelProvider(this).get(AuthViewModel.class);
-        binding.btnCreateAccount.setOnClickListener(view -> {
-            Log.d("REGISTER", "name=" + fName);
-            Log.d("REGISTER", "email=" + fEmail);
-            Log.d("REGISTER", "phone=" + fPhone);
-            Log.d("REGISTER", "dob=" + fDob);
-            Log.d("REGISTER", "address=" + fAddress);
-            Log.d("REGISTER", "account_type=" + accountType.getText().toString());
-            viewModel.register(
-                    fName,
-                    fEmail,
-                    fPhone,
-                    fPassword,
-                    fFirstName,
-                    fLastName,
-                    fDob,
-                    fPhone,
-                    fAddress,
-                    accountType.getText().toString(),
-                    1,
-                    "Active"
-            ).observe(this, data -> {
-                Log.d("REGISTER", "response = " + data);
 
+        binding.btnCreateAccount.setOnClickListener(view -> {
+            String firstName = "";
+            String lastName = "";
+            if (name != null && !name.trim().isEmpty()) {
+                String[] parts = name.trim().split("\\s+");
+                firstName = parts[0];
+                lastName = parts.length > 1 ? parts[1] : "";
+            }
+
+            String status = binding.switchStatus.isChecked() ? "Active" : "Inactive";
+
+            viewModel.register(
+                    name,
+                    email,
+                    phone,
+                    password,
+                    firstName,
+                    lastName,
+                    dob,
+                    phone,
+                    address,
+                    binding.dropdownAccountType.getText().toString(),
+                    1,
+                    status
+            ).observe(this, data -> {
                 if (data != null) {
-                    Toast.makeText(this, "Created Success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Account Created Successfully!", Toast.LENGTH_SHORT).show();
+                    // Navigate to Login after success
+                    Intent intent = new Intent(this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
                 } else {
-                    Toast.makeText(this, "Create account Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Failed to create account. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             });
         });
-
     }
 }
