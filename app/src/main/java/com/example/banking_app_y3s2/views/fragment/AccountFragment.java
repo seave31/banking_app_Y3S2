@@ -25,6 +25,8 @@ import com.example.banking_app_y3s2.viewModel.UserViewModel;
 import com.example.banking_app_y3s2.views.activity.LanguageActivity;
 import com.example.banking_app_y3s2.views.activity.MainActivity;
 
+import org.w3c.dom.Text;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -46,6 +48,7 @@ public class AccountFragment extends Fragment {
         TextView accNumTxt = view.findViewById(R.id.acc_num_txt);
         TextView balanceTxt = view.findViewById(R.id.balance_txt);
         TextView phoneTxt = view.findViewById(R.id.phoneTxt);
+        TextView emailTxt = view.findViewById(R.id.acc_email_txt);
 
 
 
@@ -57,6 +60,7 @@ public class AccountFragment extends Fragment {
         String accountNumber = sessionManager.getAccount();
         accNumTxt.setText(accountNumber);
         binding.profileNameTv.setText(name);
+
 
         //avatar
         binding.profileIconTxt.setText(String.valueOf(name.charAt(0)));
@@ -71,6 +75,9 @@ public class AccountFragment extends Fragment {
 //            }
             if(data.getCustomer().getPhoneNumber() != null){
                 phoneTxt.setText(data.getCustomer().getPhoneNumber());
+            }
+            if(data.getUser().getEmail() != null){
+                emailTxt.setText(data.getUser().getEmail());
             }
             if(data.getAccount().getCurrency() != null && data.getAccount().getCurrency().getSymbol() != null){
                 //balance

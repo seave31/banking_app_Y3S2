@@ -240,7 +240,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:outer_color="@color/brand_bg_top"
         app:inner_color="@color/background1"
-        app:text_color="?attr/colorOnPrimary"
+        app:text_color="@color/white"
         app:border_radius="28dp"
         app:text="@string/slide_to_pay" />
 

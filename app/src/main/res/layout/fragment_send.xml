@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background"
     android:orientation="vertical">
 
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="76dp"
         android:background="@drawable/bg_dashboard_header"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="16dp">
+        android:paddingHorizontal="18dp">
 
-        <ImageView
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:src="@drawable/ic_attach_money_24"
-            />
+        <FrameLayout
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_icon_badge">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_attach_money_24"
+                app:tint="@color/brass_gold" />
+        </FrameLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:text="@string/send_money"
-            android:textColor="@android:color/white"
-            android:textSize="24sp"
+            android:textColor="@color/off_white"
+            android:textSize="19sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -40,185 +48,151 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="18dp">
 
+            <!-- Ledger balance card -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:background="@drawable/bg_tile"
-                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_ledger_card"
                 android:orientation="vertical"
-                android:paddingHorizontal="16dp">
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
                     android:text="@string/available_balance"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp" />
+                    android:textAllCaps="true"
+                    android:textColor="@color/muted_slate"
+                    android:textSize="11sp" />
 
                 <TextView
                     android:id="@+id/balance_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text=""
-                    android:textColor="@color/textColor"
-                    android:textSize="30sp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="14dp"
+                    android:fontFamily="monospace"
+                    android:text="$2,480.35"
+                    android:textColor="@color/off_white"
+                    android:textSize="26sp"
                     android:textStyle="bold" />
+
+                <!-- Perforated tear line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layerType="software"
+                    android:background="@drawable/divider_dashed" />
             </LinearLayout>
 
+            <!-- Recipient -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/acc_no"
-                android:textColor="@color/text_primary"
-                android:textSize="17sp"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/account_number_et"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_input_field"
                 android:drawableStart="@drawable/ic_account_balance_wallet_24"
+                android:drawableTint="@color/brass_gold"
                 android:drawablePadding="10dp"
-                android:hint="+1 234 567 8900"
+                android:hint="ACC 000 000"
                 android:paddingHorizontal="14dp"
                 android:textColor="@color/textColor"
-                android:textColorHint="@color/text_hint" />
+                android:textColorHint="@color/muted_slate"
+                android:textSize="14sp" />
 
+            <!-- Amount -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/amount"
-                android:textColor="@color/text_primary"
-                android:textSize="17sp"
+                android:textColor="@color/off_white"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/amount_et"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_input_field"
-                android:hint="$   0.00"
-                android:inputType="numberDecimal"
-                android:paddingHorizontal="14dp"
-                android:textColor="@color/textColor"
-                android:textColorHint="@color/text_hint" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp">
 
-            <LinearLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="$"
+                    android:textColor="@color/brass_gold"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/amount_et"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="monospace"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:paddingStart="6dp"
+                    android:textColor="@color/textColor"
+                    android:textColorHint="@color/muted_slate"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- Quick amount coin chips -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:orientation="horizontal">
+                app:chipSpacingHorizontal="8dp"
+                app:singleSelection="true">
 
-<!--                chip group-->
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/chipGroup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:singleSelection="true">
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/usd_10_chip"
+                    style="@style/CoinChip"
+                    android:text="$10" />
 
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/usd_10_chip"
-                        android:text="$10"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:checkable="true"
-                        android:backgroundTint="@color/chip_money_selected"
-                        app:chipStrokeColor="@color/background1"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/usd_25_chip"
+                    style="@style/CoinChip"
+                    android:text="$25" />
 
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/usd_25_chip"
-                        android:text="$25"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:checkable="true"
-                        android:backgroundTint="@color/chip_money_selected"
-                        app:chipStrokeColor="@color/background1"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/usd_50_chip"
+                    style="@style/CoinChip"
+                    android:text="$50" />
 
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/usd_50_chip"
-                        android:text="$50"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:checkable="true"
-                        app:chipStrokeColor="@color/background1"
-                        android:backgroundTint="@color/chip_money_selected"/>
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/usd_100_chip"
-                        android:text="$100"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:checkable="true"
-                        android:backgroundTint="@color/chip_money_selected"
-                        app:chipStrokeColor="@color/background1"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/usd_100_chip"
+                    style="@style/CoinChip"
+                    android:text="$100" />
 
-                </com.google.android.material.chip.ChipGroup>
-<!--                <TextView-->
-<!--                    android:id="@+id/usd10_txt"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:background="@drawable/bg_quick_amount"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="$10"-->
-<!--                    android:textColor="@color/navy_text"-->
-<!--                    android:textSize="14sp"-->
-<!--                    android:textStyle="bold" />-->
+            </com.google.android.material.chip.ChipGroup>
 
-<!--                <TextView-->
-<!--                    android:id="@+id/usd25_txt"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    android:layout_marginStart="8dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:background="@drawable/bg_quick_amount"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="$25"-->
-<!--                    android:textColor="@color/navy_text"-->
-<!--                    android:textSize="14sp"-->
-<!--                    android:textStyle="bold" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/usd50_txt"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    android:layout_marginStart="8dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:background="@drawable/bg_quick_amount"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="$50"-->
-<!--                    android:textColor="@color/navy_text"-->
-<!--                    android:textSize="14sp"-->
-<!--                    android:textStyle="bold" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/usd100_txt"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    android:layout_marginStart="8dp"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:background="@drawable/bg_quick_amount"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="$100"-->
-<!--                    android:textColor="@color/navy_text"-->
-<!--                    android:textSize="14sp"-->
-<!--                    android:textStyle="bold" />-->
-            </LinearLayout>
-
+            <!-- Note -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/note_optional"
-                android:textColor="@color/text_primary"
-                android:textSize="17sp"
+                android:textColor="@color/off_white"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -232,32 +206,23 @@
                 android:inputType="text"
                 android:padding="14dp"
                 android:textColor="@color/textColor"
-                android:textColorHint="@color/text_hint" />
+                android:textColorHint="@color/muted_slate"
+                android:textSize="14sp" />
 
-<!--            <Button-->
-<!--                android:id="@+id/send_money_btn"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="52dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:background="@drawable/continue_btn_border"-->
-<!--                android:text="@string/continue_text"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:textSize="16sp"-->
-<!--                android:backgroundTint="@null"-->
-<!--                android:textStyle="bold" />-->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/send_money_btn"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:backgroundTint="@color/background1"
-                app:strokeColor="@color/brand_bg_top"
-                android:textColor="@color/brand_bg_top"
-                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:elevation="1dp"
+                android:backgroundTint="@color/card_navy"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 android:text="@string/continue_text"
+                android:textColor="@color/white"
+                android:textSize="15sp"
                 android:textStyle="bold"
-                app:strokeWidth="2dp"
-                />
+                app:iconGravity="textEnd" />
 
         </LinearLayout>
     </ScrollView>

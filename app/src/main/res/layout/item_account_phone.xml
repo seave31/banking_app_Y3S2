@@ -9,10 +9,10 @@
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="@drawable/bg_soft_icon"
+        android:background="@drawable/bg_soft_icon_blue"
         android:padding="10dp"
         android:src="@android:drawable/ic_menu_call"
-        android:tint="@color/brand_bg_top" />
+/>
 
     <LinearLayout
         android:layout_width="wrap_content"

@@ -86,9 +86,13 @@
         <item name="cornerSize">50%</item>
     </style>
 
-    <style name="Widget.BankingApp.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
-        <item name="itemIconTint">@color/black</item>
-        <item name="itemTextColor">@color/black</item>
+    <style name="Widget.BankingApp.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="BankingApp.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/brand_bg_top</item>
     </style>
 
     <style name="Widget.BankingApp.InputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -99,4 +103,20 @@
         <item name="boxCornerRadiusBottomStart">12dp</item>
         <item name="boxCornerRadiusBottomEnd">12dp</item>
     </style>
+
+<!--    coin chip-->
+    <style name="CoinChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:checkable">true</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="chipCornerRadius">18dp</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">@color/chip_stroke_color</item>
+        <item name="chipBackgroundColor">@color/chip_bg_color</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="rippleColor">@color/brass_gold_20</item>
+    </style>
+
 </resources>
