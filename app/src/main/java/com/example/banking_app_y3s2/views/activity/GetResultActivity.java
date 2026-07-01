@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2.views;
+package com.example.banking_app_y3s2.views.activity;
 
 import android.os.Bundle;
 

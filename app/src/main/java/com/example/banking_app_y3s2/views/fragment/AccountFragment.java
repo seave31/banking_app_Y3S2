@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.fragment;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -16,10 +16,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.banking_app_y3s2.R;
+import com.example.banking_app_y3s2.network.RetrofitInstance;
 import com.example.banking_app_y3s2.databinding.FragmentAccountBinding;
-import com.example.banking_app_y3s2.databinding.ItemAccountNumberBinding;
+import com.example.banking_app_y3s2.models.LogoutResponse;
 import com.example.banking_app_y3s2.utils.SessionManager;
 import com.example.banking_app_y3s2.viewModel.UserViewModel;
+import com.example.banking_app_y3s2.views.activity.LanguageActivity;
+import com.example.banking_app_y3s2.views.activity.MainActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,6 +45,7 @@ public class AccountFragment extends Fragment {
         View view = binding.getRoot(); //get the root view of the binding
         TextView accNumTxt = view.findViewById(R.id.acc_num_txt);
         TextView balanceTxt = view.findViewById(R.id.balance_txt);
+        TextView phoneTxt = view.findViewById(R.id.phoneTxt);
 
 
 
@@ -49,7 +54,11 @@ public class AccountFragment extends Fragment {
         //bearer token
         String token = "Bearer " + sessionManager.getToken();
         String name = sessionManager.getName();
+        String accountNumber = sessionManager.getAccount();
+        accNumTxt.setText(accountNumber);
         binding.profileNameTv.setText(name);
+
+        //avatar
         binding.profileIconTxt.setText(String.valueOf(name.charAt(0)));
 
         userViewModel.getCurrentUser(token).observe(getViewLifecycleOwner(), data -> {
@@ -57,8 +66,11 @@ public class AccountFragment extends Fragment {
                 Toast.makeText(requireContext(), "No data", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if(data.getAccount() != null && data.getAccount().getAccountNumber() != null){
-                accNumTxt.setText(data.getAccount().getAccountNumber());
+//            if(data.getAccount() != null && data.getAccount().getAccountNumber() != null){
+//                accNumTxt.setText(data.getAccount().getAccountNumber());
+//            }
+            if(data.getCustomer().getPhoneNumber() != null){
+                phoneTxt.setText(data.getCustomer().getPhoneNumber());
             }
             if(data.getAccount().getCurrency() != null && data.getAccount().getCurrency().getSymbol() != null){
                 //balance

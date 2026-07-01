@@ -1,37 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base text style -->
     <style name="Widget.BankingApp.CleanTextView" parent="@android:style/Widget.TextView">
         <item name="android:shadowColor">@android:color/transparent</item>
         <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
         <item name="android:shadowRadius">0</item>
         <item name="android:elegantTextHeight">false</item>
     </style>
 
-    <!-- Refined Bottom Nav Styling -->
-    <style name="Widget.BankingApp.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
-        <item name="itemActiveIndicatorStyle">@style/Widget.BankingApp.BottomNavIndicator</item>
-        <item name="itemRippleColor">@android:color/transparent</item>
-        <item name="labelVisibilityMode">unlabeled</item>
-        <item name="itemIconTint">@color/nav_item_color</item>
-        <item name="itemTextColor">@color/nav_item_color</item>
+    <style name="Widget.BankingApp.CleanTextViewCompat" parent="Widget.AppCompat.TextView">
+        <item name="android:shadowColor">@android:color/transparent</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:elegantTextHeight">false</item>
     </style>
 
-    <style name="Widget.BankingApp.BottomNavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <!-- Solid Teal Indicator for high-end contrast -->
-        <item name="android:color">@color/primary</item>
-        <item name="android:width">48dp</item>
-        <item name="android:height">38dp</item>
-        <item name="shapeAppearance">@style/ShapeAppearance.BankingApp.NavIndicator</item>
+    <style name="Widget.BankingApp.CleanEditText" parent="@android:style/Widget.EditText">
+        <item name="android:shadowColor">@android:color/transparent</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
     </style>
 
-    <style name="ShapeAppearance.BankingApp.NavIndicator" parent="ShapeAppearance.Material3.SmallComponent">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">19dp</item>
+    <style name="Widget.BankingApp.CleanEditTextCompat" parent="Widget.AppCompat.EditText">
+        <item name="android:shadowColor">@android:color/transparent</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
     </style>
 
-    <style name="ShapeAppearance.BankingApp.Circle" parent="ShapeAppearance.Material3.SmallComponent">
+    <style name="Widget.BankingApp.CleanButton" parent="Widget.Material3.Button">
+        <item name="android:shadowColor">@android:color/transparent</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.BankingApp.CleanButtonCompat" parent="Widget.AppCompat.Button">
+        <item name="android:shadowColor">@android:color/transparent</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="SectionLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="RoundedInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="hintTextColor">@color/primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+    </style>
+
+    <style name="RoundedDropdownLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="hintTextColor">@color/primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+    </style>
+
+    <style name="CircleImage">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Widget.BankingApp.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconTint">@color/black</item>
+        <item name="itemTextColor">@color/black</item>
+    </style>
+
+    <style name="Widget.BankingApp.InputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="hintTextColor">@color/black</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
     </style>
 </resources>

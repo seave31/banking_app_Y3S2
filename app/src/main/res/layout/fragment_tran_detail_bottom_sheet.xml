@@ -1,32 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="20dp">
 
-    <!-- Transaction Type -->
+    <!-- Avatar -->
     <TextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/typeTv"
-        android:text="Transfer"
+        android:id="@+id/counterPartyAvatar"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_avatar"
+        android:gravity="center"
+        android:text="JD"
+        android:textSize="12sp"
         android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_width="wrap_content"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Type -->
+    <TextView
+        android:id="@+id/directionalLabel"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="TRANSFER"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@id/counterPartyAvatar"
+        app:layout_constraintTop_toTopOf="@id/counterPartyAvatar"
+        app:layout_constraintEnd_toStartOf="@id/icon_iv"/>
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+    <!-- Name -->
+    <TextView
+        android:id="@+id/counterPartyNameTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="John · ···3456"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@id/directionalLabel"
+        app:layout_constraintTop_toBottomOf="@id/directionalLabel"
+        app:layout_constraintEnd_toStartOf="@id/icon_iv"/>
 
-    <!-- Status -->
+    <!-- Icon -->
     <ImageView
-        android:layout_marginTop="20dp"
         android:id="@+id/icon_iv"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/bg_soft_icon_green"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
         android:padding="10dp"
+        android:background="@drawable/bg_soft_icon_green"
         android:src="@android:drawable/arrow_up_float"
         android:tint="@color/soft_green_text"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,89 +64,119 @@
     <!-- Amount -->
     <TextView
         android:id="@+id/amountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="$120.00"
-        android:textSize="26sp"
+        android:textSize="36sp"
         android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        app:layout_constraintTop_toBottomOf="@id/typeTv"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Sender -->
-    <TextView
-        android:id="@+id/senderTv"
-        android:text="From: John (123456)"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        app:layout_constraintTop_toBottomOf="@id/amountTv"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Receiver -->
-    <TextView
-        android:id="@+id/receiverTv"
-        android:text="To: Alice (654321)"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/senderTv"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/counterPartyAvatar"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <!-- Divider -->
     <View
+        android:id="@+id/divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="#DDDDDD"
-
-        app:layout_constraintTop_toBottomOf="@id/receiverTv"
+        android:layout_marginTop="20dp"
+        android:background="?attr/colorOutlineVariant"
+        app:layout_constraintTop_toBottomOf="@id/amountTv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Transaction ID -->
+    <!-- Transaction ID Label -->
+    <TextView
+        android:id="@+id/transactionIdLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/transaction_id"
+        android:textSize="11sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Transaction ID Value -->
     <TextView
         android:id="@+id/transactionIdTv"
-        android:text="ID: TXN123456"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="TXN123456"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/transactionIdLabel"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-        app:layout_constraintTop_toBottomOf="@id/receiverTv"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="12dp"/>
-
-    <!-- Date -->
+    <!-- Date Label (NOW BELOW ID) -->
     <TextView
-        android:id="@+id/dateTv"
-        android:text="12 Apr 2026, 10:30 AM"
+        android:id="@+id/dateLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:text="@string/date"
+        android:textAllCaps="true"
+        android:textSize="11sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/transactionIdTv"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <!-- Remark -->
+    <!-- Date Value -->
     <TextView
-        android:id="@+id/remarkTv"
-        android:text="Payment for lunch"
+        android:id="@+id/dateTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="12 Apr 2026"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/dateLabel"
+        app:layout_constraintStart_toStartOf="parent"/>
 
+    <!-- Remark Label -->
+    <TextView
+        android:id="@+id/remarkLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remark"
+        android:textAllCaps="true"
+        android:textSize="11sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/dateTv"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <LinearLayout
-        app:layout_constraintTop_toBottomOf="@+id/remarkTv"
-        android:layout_width="match_parent"
+    <!-- Remark Value -->
+    <TextView
+        android:id="@+id/remarkTv"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal">
-        <ImageView
-            android:src="@drawable/icon_save_alt_24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save as image"/>
-    </LinearLayout>
+        android:text="Payment for lunch"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/remarkLabel"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Save Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveBtn"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="@string/save_as_image"
+        android:textAllCaps="false"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        app:icon="@drawable/icon_save_alt_24"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/remarkTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

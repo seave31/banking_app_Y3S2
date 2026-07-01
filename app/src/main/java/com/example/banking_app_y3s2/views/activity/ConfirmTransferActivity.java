@@ -1,8 +1,9 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.activity;
 
 import static android.view.View.GONE;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -10,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.banking_app_y3s2.utils.LocaleHelper;
 import com.example.banking_app_y3s2.databinding.ActivityConfirmTransferBinding;
 import com.example.banking_app_y3s2.utils.SessionManager;
 import com.example.banking_app_y3s2.viewModel.SendViewModel;
@@ -78,6 +80,10 @@ public class ConfirmTransferActivity extends AppCompatActivity {
         //swipe button
         binding.slideToPay.setOnSlideCompleteListener(slideToActView -> {
             sendViewModel.sendMoney(token, targetAccountNumber, amount, remark);
+
+            Intent intent = new Intent();
+            intent.putExtra("transfer_success", true);
+            setResult(RESULT_OK, intent);
             finish();
         });
     }

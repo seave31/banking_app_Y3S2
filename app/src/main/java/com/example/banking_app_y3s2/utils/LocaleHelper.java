@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

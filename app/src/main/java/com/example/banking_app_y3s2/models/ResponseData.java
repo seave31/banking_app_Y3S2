@@ -1,8 +1,5 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.models;
 
-import com.example.banking_app_y3s2.models.Account;
-import com.example.banking_app_y3s2.models.Customer;
-import com.example.banking_app_y3s2.models.User;
 import com.google.gson.annotations.SerializedName;
 
 public class ResponseData {

@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.fragment;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 
 import com.example.banking_app_y3s2.databinding.FragmentQrDialogBinding;
 import com.google.zxing.BarcodeFormat;
-import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 

@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.models;
 
 import com.google.gson.annotations.SerializedName;
 

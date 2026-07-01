@@ -1,4 +1,4 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.bottomsheet;
 
 import android.os.Bundle;
 
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.FragmentTranDetailBottomSheetBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
@@ -75,17 +76,48 @@ public class TranDetailBottomSheet extends BottomSheetDialogFragment {
         //connect with xml layout
         binding = FragmentTranDetailBottomSheetBinding.inflate(inflater, container, false);
 
-        binding.transactionIdTv.setText("Reference ID: " + refId);
-        binding.senderTv.setText("Sender: " + sender + " (" + senderAcc + ")");
-        binding.receiverTv.setText("Receiver: " + receiver+ " (" + receiverAcc + ")");
-        binding.dateTv.setText("Date: " + date);
-        binding.typeTv.setText(transactionType);
+        binding.transactionIdTv.setText(refId);
+//        binding.receiverTv.setText("Receiver: " + receiver+ " (" + receiverAcc + ")");
+        binding.dateTv.setText(date);
+
+
+        if(direction .equals("outgoing")){
+//            //counter party avatar
+//            String name = receiver != null ? receiver.trim() : "";
+//
+//            String[] parts = name.split("\\s+");
+//
+//            String initials = "";
+//
+//            if (parts.length >= 1 && parts[0].length() > 0) {
+//                initials += parts[0].charAt(0);
+//            }
+//
+//            if (parts.length >= 2 && parts[1].length() > 0) {
+//                initials += parts[1].charAt(0);
+//            }
+
+            binding.counterPartyAvatar.setText(String.valueOf(receiver.charAt(0)));
+
+            //directional transaction label
+            binding.directionalLabel.setText(getString(R.string.sent_to));
+            binding.counterPartyNameTv.setText(receiver + " (" + receiverAcc + ")");
+        }else {
+            //counter party avatar
+            binding.counterPartyAvatar.setText(String.valueOf(sender.charAt(0)));
+
+            //directional transaction label
+            binding.directionalLabel.setText(getString(R.string.received_from));
+            binding.counterPartyNameTv.setText(sender + " (" + senderAcc + ")");
+        }
+
 
         //remark handling
         if(remark == null){
+            binding.remarkLabel.setVisibility(View.GONE);
             binding.remarkTv.setVisibility(View.GONE);
         }else {
-            binding.remarkTv.setText("Remark: " + remark);
+            binding.remarkTv.setText(remark);
         }
 
         if(direction.equals("outgoing")){

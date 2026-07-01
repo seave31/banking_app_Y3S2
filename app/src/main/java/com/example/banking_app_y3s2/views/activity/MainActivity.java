@@ -1,9 +1,7 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.activity;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -13,14 +11,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.banking_app_y3s2.utils.LocaleHelper;
+import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.ActivityMainBinding;
-import com.example.banking_app_y3s2.models.Account;
 import com.example.banking_app_y3s2.utils.SessionManager;
 import com.example.banking_app_y3s2.viewModel.AuthViewModel;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
@@ -64,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
                     //name
                     String name = data.getUser().getName();
+
+//                    //phone
+//                    String phone1 = data.getCustomer().getPhoneNumber().toString();
 
                     //account number
                     String accountNumber = "";

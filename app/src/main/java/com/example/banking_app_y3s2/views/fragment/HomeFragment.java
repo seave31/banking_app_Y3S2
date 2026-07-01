@@ -1,6 +1,4 @@
-package com.example.banking_app_y3s2;
-
-import static android.content.Context.MODE_PRIVATE;
+package com.example.banking_app_y3s2.views.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,12 +17,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.banking_app_y3s2.adapter.TransactionAdapter;
+import com.example.banking_app_y3s2.R;
+import com.example.banking_app_y3s2.views.adapter.TransactionAdapter;
 import com.example.banking_app_y3s2.databinding.FragmentHomeBinding;
 import com.example.banking_app_y3s2.models.Transaction;
 import com.example.banking_app_y3s2.utils.SessionManager;
 import com.example.banking_app_y3s2.viewModel.TransactionViewModel;
 import com.example.banking_app_y3s2.viewModel.UserViewModel;
+import com.example.banking_app_y3s2.views.activity.ScanQrActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONException;
@@ -108,11 +108,6 @@ public class HomeFragment extends Fragment {
             qrDialogFragment.show(getParentFragmentManager(), "qr_dialog"); //show it
         });
 
-        //scan qr btn
-        binding.scanQr.setOnClickListener(view -> {
-            Intent intent = new Intent(requireContext(), ScanQrActivity.class);
-            startActivity(intent);
-        });
 
         //recent transaction history
         binding.homeRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -131,10 +126,28 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //view profile
+        binding.profileIconTx.setOnClickListener(view -> {
+            BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNav);
+            bottomNavigationView.setSelectedItemId(R.id.nav_account);
+        });
+
         //see all
         binding.viewAll.setOnClickListener(view -> {
             BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNav);
             bottomNavigationView.setSelectedItemId(R.id.nav_history);
+        });
+
+                    //(fast actions)
+        //scan qr btn
+        binding.scanQr.setOnClickListener(view -> {
+            Intent intent = new Intent(requireContext(), ScanQrActivity.class);
+            startActivity(intent);
+        });
+        //send money
+        binding.sendMoneyFeatureIc.setOnClickListener(view -> {
+            BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNav);
+            bottomNavigationView.setSelectedItemId(R.id.nav_send);
         });
 
 

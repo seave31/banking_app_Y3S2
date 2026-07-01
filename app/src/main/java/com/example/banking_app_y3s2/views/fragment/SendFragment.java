@@ -1,33 +1,32 @@
-package com.example.banking_app_y3s2;
+package com.example.banking_app_y3s2.views.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.banking_app_y3s2.databinding.ActivityConfirmTransferBinding;
+import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.FragmentSendBinding;
 import com.example.banking_app_y3s2.utils.SessionManager;
-import com.example.banking_app_y3s2.viewModel.SendViewModel;
 import com.example.banking_app_y3s2.viewModel.UserViewModel;
-import com.google.android.material.chip.Chip;
-import com.google.android.material.chip.ChipGroup;
+import com.example.banking_app_y3s2.views.activity.ConfirmTransferActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 public class SendFragment extends Fragment {
     private FragmentSendBinding binding;
     private UserViewModel userViewModel;
     private SessionManager sessionManager;
+    private ActivityResultLauncher<Intent> launcher; //“receiver” that waits for result from another Activity
 
     @Nullable
     @Override
@@ -117,7 +116,8 @@ public class SendFragment extends Fragment {
                         intent.putExtra("accName", data.getAccountName());
                         intent.putExtra("amount", amount);
                         intent.putExtra("remark", finalRemark);
-                        startActivity(intent);
+//                        startActivity(intent);
+                        launcher.launch(intent); //wait for result
                     } else {
                         //account not found
                         Snackbar snackbar = Snackbar.make(view, getString(R.string.acc_not_found), Snackbar.LENGTH_LONG);
@@ -132,11 +132,25 @@ public class SendFragment extends Fragment {
                 });
 
 
-
-
-
             }
         });
+
+        launcher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result-> {
+                    if(result.getResultCode() == Activity.RESULT_OK){
+                        Intent data = result.getData();
+
+                        if(data != null && data.getBooleanExtra( //Did the previous screen send transfer_success = true?
+                                "transfer_success", false //false → default value if key not found
+                        )){
+                            clearFields();
+                            loadBalance();
+                        }
+
+                    }
+                }
+        );
 
         return binding.getRoot();
     }
@@ -180,6 +194,11 @@ public class SendFragment extends Fragment {
             }
 
         });
+    }
+    private void clearFields() {
+        binding.accountNumberEt.setText("");
+        binding.amountEt.setText("");
+        binding.remarkEt.setText("");
     }
 
 
