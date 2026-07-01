@@ -54,11 +54,11 @@
             <!-- Transfer icon -->
             <ImageView
                 android:id="@+id/arrowIcon"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:padding="10dp"
-                android:src="@drawable/icon_transfer_fill"
+                android:src="@drawable/baseline_near_me_24"
                 android:backgroundTint="?attr/colorPrimary"
                 android:background="@drawable/bg_avatar_circle" />
 

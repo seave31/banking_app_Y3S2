@@ -1,5 +1,6 @@
 package com.example.banking_app_y3s2.views.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.banking_app_y3s2.R;
 import com.example.banking_app_y3s2.databinding.ActivityCreateBankAccountBinding;
+import com.example.banking_app_y3s2.utils.LocaleHelper;
 import com.example.banking_app_y3s2.viewModel.AuthViewModel;
 import com.google.android.material.appbar.MaterialToolbar;
 
@@ -56,16 +58,18 @@ public class CreateBankAccountActivity extends AppCompatActivity {
         binding.tvUserPhone.setText(phone);
 
         // Account Type Dropdown
-        String[] accountTypes = {"Saving account", "Current account", "Fixed deposit", "Business account"};
-        ArrayAdapter<String> typeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, accountTypes);
+        String[] accountTypes = getResources().getStringArray(R.array.account_types);
+        ArrayAdapter<String> typeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, accountTypes);
         binding.dropdownAccountType.setAdapter(typeAdapter);
-        binding.dropdownAccountType.setText(accountTypes[0], false);
+//        binding.dropdownAccountType.setText(accountTypes[0], false);
+        binding.dropdownAccountType.setOnClickListener(v-> binding.dropdownAccountType.showDropDown());
 
         // Currency Dropdown
-        String[] currencies = {"USD - US Dollar", "KHR - Riel"};
-        ArrayAdapter<String> currAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, currencies);
+        String[] currencies = getResources().getStringArray(R.array.currencies);
+        ArrayAdapter<String> currAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, currencies);
         binding.dropdownCurrency.setAdapter(currAdapter);
-        binding.dropdownCurrency.setText(currencies[0], false);
+//        binding.dropdownCurrency.setText(currencies[0], false);
+        binding.dropdownCurrency.setOnClickListener(v -> binding.dropdownCurrency.showDropDown());
 
         // ViewModel setup
         viewModel = new ViewModelProvider(this).get(AuthViewModel.class);
@@ -107,5 +111,10 @@ public class CreateBankAccountActivity extends AppCompatActivity {
                 }
             });
         });
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.setLocale(base, LocaleHelper.loadLanguage(base)));
     }
 }
